@@ -35,7 +35,7 @@ The first run is deliberately gentle: create an account, a short animation shows
 
 ## The honest part
 
-- With an account, your data lives on my server (Cloudflare Workers and D1). It is protected by your passkey, but it is **not end-to-end encrypted**. I can technically read it. I don't, and the code is public, but you deserve to know.
+- With an account, your data is stored on Cloudflare (Workers and D1) so it can sync, behind your passkey. I don't look at it, and the code is public.
 - Email reminders and email invites are not on yet. They need a sending domain, and a website cannot wake a closed phone on its own, so for reminders when the app is closed there is still a calendar file with alarms.
 - It has been tested in real Chrome with virtual passkeys and two simulated people sharing a wallet. It has not been tested on every phone. If something looks wrong on yours, please tell me.
 - The Greek is my best attempt and is waiting for a native speaker to correct it.
