@@ -208,11 +208,12 @@ function postRow( p, i ) {
 function hero() {
 	return `<section class="hero" id="top" aria-labelledby="hero-title">
 	<div class="wrap hero-in">
-		<pre class="boot" aria-hidden="true" data-boot>BIOS (c) Feb 20, 1983 G.S. Systems
-64K RAM OK
-LOADING THOUGHTS ........ OK
-LOADING PROJECTS ........ OK
-LOADING BAD JOKES ....... OK</pre>
+		<pre class="boot" aria-hidden="true" data-boot><span class="bl" data-text="BIOS (c) Feb 20, 1983 G.S. Systems">BIOS (c) Feb 20, 1983 G.S. Systems</span>
+<span class="bl" data-text="CHECKING 64K RAM" data-status="OK">CHECKING 64K RAM ......... <b class="ok">OK</b></span>
+<span class="bl" data-text="LOADING THOUGHTS" data-status="OK">LOADING THOUGHTS ....... <b class="ok">OK</b></span>
+<span class="bl" data-text="LOADING PROJECTS" data-status="OK">LOADING PROJECTS ....... <b class="ok">OK</b></span>
+<span class="bl" data-text="LOADING BAD JOKES" data-status="ERROR 404" data-err="1">LOADING BAD JOKES ...... <b class="err">ERROR 404</b></span>
+<span class="bl" data-text="&gt; JOKES NOT FOUND. CONTINUING ANYWAY" data-dim="1">&gt; JOKES NOT FOUND. CONTINUING ANYWAY</span></pre>
 		<h1 id="hero-title" class="hero-title">Notes from the gap <br class="br">between what exists <br class="br">and what people <br class="br">need<span class="caret big" aria-hidden="true"></span></h1>
 		<p class="hero-sub">I'm George. I build small tools that fill gaps I keep running into, and every one of them gets a post here: why it exists, what went wrong, what I hoped for.</p>
 		<p class="hero-cta"><a class="btn" href="${ SITE.base }posts/${ ( posts.find( ( p ) => ! p.pinned ) || posts[ 0 ] ).slug }/" data-post>&gt; read the latest post</a> <a class="btn ghost" href="#posts">&gt; ls posts</a></p>
