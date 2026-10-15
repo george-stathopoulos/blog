@@ -38,6 +38,7 @@ Every new project (website, plugin, app or private tool) gets **at least one pos
 | `src/pages/` | Other pages, such as About |
 | `src/assets/` | CSS, JS, favicon, social image, fonts (VT323 and IBM Plex Mono, SIL Open Font License) |
 | `dev/serve.mjs` | Serves `dist/` under `/blog/` for local checks |
+| `dev/portrait.mjs` | Rebuilds the About portrait (`src/assets/george-signal.png`) from the portfolio photo: a grey tone map the page tints with the current colour |
 | `dev/og.mjs` | Regenerates the social image (`src/assets/social.png`) |
 
-Colours: amber (default), green and paper, from the `[amber]` button in the top bar.
+Colours (amber default, green, white, paper) and fonts (terminal, plex mono, jetbrains, space mono, system) are chosen from the `[style]` button in the top bar and remembered in the browser.

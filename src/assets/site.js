@@ -15,25 +15,43 @@
 		return null;
 	}
 
-	/* Colour: amber -> green -> paper ----------------------------------- */
-	var THEMES = [ 'amber', 'green', 'paper' ];
-	var label = document.querySelector( '[data-theme-name]' );
-	function setTheme( name ) {
-		if ( name === 'amber' ) { delete root.dataset.theme; } else { root.dataset.theme = name; }
-		if ( label ) { label.textContent = name; }
-		store( 'gs-blog-theme', name === 'amber' ? '' : name );
+	/* Style panel: colour and font ---------------------------------------- */
+	var panel = document.getElementById( 'style-panel' );
+	var toggle = document.querySelector( '[data-style-toggle]' );
+	function marks() {
+		var th = root.dataset.theme || 'amber';
+		var fo = root.dataset.font || 'terminal';
+		document.querySelectorAll( '[data-theme-set]' ).forEach( function ( b ) { b.setAttribute( 'aria-pressed', b.dataset.themeSet === th ? 'true' : 'false' ); } );
+		document.querySelectorAll( '[data-font-set]' ).forEach( function ( b ) { b.setAttribute( 'aria-pressed', b.dataset.fontSet === fo ? 'true' : 'false' ); } );
+	}
+	function setOption( attr, key, value, fallback ) {
+		if ( value === fallback ) { delete root.dataset[ attr ]; } else { root.dataset[ attr ] = value; }
+		store( key, value === fallback ? '' : value );
 		var meta = document.querySelector( 'meta[name="theme-color"]' );
 		if ( meta ) { meta.content = getComputedStyle( root ).getPropertyValue( '--bg' ).trim(); }
+		marks();
 	}
-	var current = root.dataset.theme || 'amber';
-	if ( label ) { label.textContent = current; }
-	var cycle = document.querySelector( '[data-theme-cycle]' );
-	if ( cycle ) {
-		cycle.addEventListener( 'click', function () {
-			var now = root.dataset.theme || 'amber';
-			setTheme( THEMES[ ( THEMES.indexOf( now ) + 1 ) % THEMES.length ] );
+	document.querySelectorAll( '[data-theme-set]' ).forEach( function ( b ) {
+		b.addEventListener( 'click', function () { setOption( 'theme', 'gs-blog-theme', b.dataset.themeSet, 'amber' ); } );
+	} );
+	document.querySelectorAll( '[data-font-set]' ).forEach( function ( b ) {
+		b.addEventListener( 'click', function () { setOption( 'font', 'gs-blog-font', b.dataset.fontSet, 'terminal' ); } );
+	} );
+	function closePanel() {
+		if ( panel && toggle ) { panel.hidden = true; toggle.setAttribute( 'aria-expanded', 'false' ); }
+	}
+	if ( panel && toggle ) {
+		toggle.addEventListener( 'click', function ( e ) {
+			e.stopPropagation();
+			var open = panel.hidden;
+			panel.hidden = ! open;
+			toggle.setAttribute( 'aria-expanded', open ? 'true' : 'false' );
 		} );
+		panel.addEventListener( 'click', function ( e ) { e.stopPropagation(); } );
+		document.addEventListener( 'click', closePanel );
+		document.addEventListener( 'keydown', function ( e ) { if ( e.key === 'Escape' ) { closePanel(); } } );
 	}
+	marks();
 
 	/* Mobile menu -------------------------------------------------------- */
 	var menu = document.querySelector( '[data-menu]' );
@@ -96,6 +114,46 @@
 		items.forEach( function ( el ) { io.observe( el ); } );
 	} else {
 		items.forEach( function ( el ) { el.classList.add( 'in' ); } );
+	}
+
+	/* About portrait: signal-loss glitches ------------------------------- */
+	var portrait = document.querySelector( '[data-portrait]' );
+	if ( portrait ) {
+		if ( reduce ) {
+			portrait.classList.add( 'on' );
+		} else {
+			var slices = portrait.querySelectorAll( '.p-slice' );
+			var main = portrait.querySelector( '.p-main' );
+			var rnd = function ( a, b ) { return a + Math.random() * ( b - a ); };
+			var burst = function () {
+				var frames = 5 + Math.floor( Math.random() * 4 );
+				var f = 0;
+				( function step() {
+					slices.forEach( function ( el ) {
+						var top = rnd( 0, 88 );
+						el.style.clipPath = 'inset(' + top + '% 0 ' + Math.max( 0, 100 - top - rnd( 3, 14 ) ) + '% 0)';
+						el.style.transform = 'translateX(' + rnd( -26, 26 ) + 'px)';
+						el.style.opacity = '1';
+					} );
+					main.style.transform = 'translateX(' + rnd( -4, 4 ) + 'px)';
+					if ( ++f < frames ) {
+						setTimeout( step, 55 );
+					} else {
+						slices.forEach( function ( el ) { el.style.opacity = '0'; } );
+						main.style.transform = '';
+						setTimeout( burst, rnd( 2200, 6500 ) );
+					}
+				} )();
+			};
+			var io2 = new IntersectionObserver( function ( entries ) {
+				if ( entries[ 0 ].isIntersecting ) {
+					io2.disconnect();
+					portrait.classList.add( 'on' );
+					setTimeout( burst, 3200 );
+				}
+			}, { threshold: 0.35 } );
+			io2.observe( portrait );
+		}
 	}
 
 	/* Opening a post: dissolve the hero and list, then navigate ---------- */

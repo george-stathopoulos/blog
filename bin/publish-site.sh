@@ -22,5 +22,5 @@ else
 	echo "Blog: pushed."
 fi
 rm -rf "$work"
-gh api "repos/$REPO/pages" >/dev/null 2>&1 || gh api -X POST "repos/$REPO/pages" -f "source[branch]=gh-pages" -f "source[path]=/" >/dev/null
+gh api "repos/$REPO/pages" >/dev/null 2>&1 || gh api -X POST "repos/$REPO/pages" -f "source[branch]=gh-pages" -f "source[path]=/" >/dev/null || true
 echo "https://george-stathopoulos.github.io/blog/"

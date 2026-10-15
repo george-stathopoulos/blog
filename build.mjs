@@ -34,6 +34,20 @@ const PROJECTS = [
 	{ slug: 'mission-control', name: 'Mission Control', url: '', repo: '', text: 'One private dashboard for the visits to all of these sites', kind: 'Private tool' },
 ];
 
+const THEMES = [
+	{ id: 'amber', sw: '#ffb000' },
+	{ id: 'green', sw: '#33ff66' },
+	{ id: 'white', sw: '#f2f2f2' },
+	{ id: 'paper', sw: '#f4efe2' },
+];
+const FONTS = [
+	{ id: 'terminal', label: 'terminal', css: "'VT323', monospace" },
+	{ id: 'plex', label: 'plex mono', css: "'IBM Plex Mono', monospace" },
+	{ id: 'jetbrains', label: 'jetbrains', css: "'JetBrains Mono', monospace" },
+	{ id: 'space', label: 'space mono', css: "'Space Mono', monospace" },
+	{ id: 'system', label: 'system', css: 'ui-monospace, Menlo, monospace' },
+];
+
 const ROOT = process.cwd();
 const SRC = join( ROOT, 'src' );
 const OUT = join( ROOT, 'dist' );
@@ -137,7 +151,7 @@ ${ noindex ? '<meta name="robots" content="noindex">\n' : '' }<meta name="theme-
 <link rel="icon" href="${ SITE.base }assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="${ SITE.base }assets/fonts/vt323-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="${ SITE.base }assets/site.css?v=${ ASSET_V }">
-<script>document.documentElement.classList.remove('no-js');try{var t=localStorage.getItem('gs-blog-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script>document.documentElement.classList.remove('no-js');try{var t=localStorage.getItem('gs-blog-theme'),f=localStorage.getItem('gs-blog-font');if(t)document.documentElement.dataset.theme=t;if(f)document.documentElement.dataset.font=f}catch(e){}</script>
 <!-- Cloudflare Web Analytics: counts visits anonymously, no cookies --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "64332b427a604e879f82853393ebdb0d"}'></script><!-- End Cloudflare Web Analytics -->
 ${ jsonLd }</head>
 <body class="${ bodyClass }">
@@ -148,8 +162,14 @@ ${ jsonLd }</head>
 		<a class="prompt" href="${ SITE.base }" aria-label="Blog home"><span class="u">george</span>@<span class="h">blog</span>:<span class="p">~</span>$<span class="caret" aria-hidden="true"></span></a>
 		<nav id="nav" class="nav" aria-label="Main">${ nav }</nav>
 		<div class="bar-tools">
-			<button type="button" class="tool" data-theme-cycle aria-label="Change colour">[<span data-theme-name>amber</span>]</button>
+			<button type="button" class="tool" data-style-toggle aria-expanded="false" aria-controls="style-panel">[style]</button>
 			<button type="button" class="tool menu" data-menu aria-controls="nav" aria-expanded="false">[menu]</button>
+		</div>
+		<div class="style-panel" id="style-panel" hidden>
+			<p class="sp-h">colour</p>
+			<div class="sp-row">${ THEMES.map( ( t ) => `<button type="button" class="sp-btn" data-theme-set="${ t.id }" aria-pressed="false"><span class="sp-sw" style="--sw:${ t.sw }"></span>${ t.id }</button>` ).join( '' ) }</div>
+			<p class="sp-h">font</p>
+			<div class="sp-row">${ FONTS.map( ( f ) => `<button type="button" class="sp-btn" data-font-set="${ f.id }" aria-pressed="false" style="font-family:${ f.css }">${ f.label }</button>` ).join( '' ) }</div>
 		</div>
 	</div>
 </header>
@@ -183,7 +203,7 @@ function postRow( p, i ) {
 function hero() {
 	return `<section class="hero" id="top" aria-labelledby="hero-title">
 	<div class="wrap hero-in">
-		<pre class="boot" aria-hidden="true" data-boot>BIOS (c) 1984 G.S. Systems
+		<pre class="boot" aria-hidden="true" data-boot>BIOS (c) Feb 20, 1983 G.S. Systems
 64K RAM OK
 LOADING THOUGHTS ........ OK
 LOADING PROJECTS ........ OK
@@ -193,6 +213,24 @@ LOADING BAD JOKES ....... OK</pre>
 		<p class="hero-cta"><a class="btn" href="${ SITE.base }posts/${ posts[ 0 ].slug }/" data-post>&gt; read the latest post</a> <a class="btn ghost" href="#posts">&gt; ls posts</a></p>
 	</div>
 	<a class="scroll-hint" href="#posts" aria-label="Scroll to the posts">scroll<span>↓</span></a>
+</section>`;
+}
+
+// The portrait is a grey tone map (assets/george-signal.png). This filter colours it with the current theme
+// (bright = text colour, dark = page colour), so it follows the colour picker.
+const TINT = `<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="tint" color-interpolation-filters="sRGB" x="0" y="0" width="100%" height="100%"><feFlood style="flood-color:var(--fg)" result="fg"/><feBlend in="fg" in2="SourceGraphic" mode="multiply" result="a"/><feComponentTransfer in="SourceGraphic" result="inv"><feFuncR type="linear" slope="-1" intercept="1"/><feFuncG type="linear" slope="-1" intercept="1"/><feFuncB type="linear" slope="-1" intercept="1"/></feComponentTransfer><feFlood style="flood-color:var(--bg)" result="bg"/><feBlend in="bg" in2="inv" mode="multiply" result="b"/><feComposite in="a" in2="b" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/></filter></svg>`;
+
+function aboutHead( title ) {
+	const img = `${ SITE.base }assets/george-signal.png`;
+	return `<section class="wrap about-head">
+	<div class="page-head"><p class="crumb"><span class="dim">$</span> cat about.md</p><h1 class="page-title">${ esc( title ) }</h1></div>
+	<figure class="portrait" data-portrait>
+		<div class="p-stage">
+			<div class="p-shake"><img class="p-main" src="${ img }" width="640" height="640" alt="George, as a half-lit portrait glowing like an old monitor"><img class="p-slice" src="${ img }" alt="" aria-hidden="true"><img class="p-slice" src="${ img }" alt="" aria-hidden="true"></div>
+			<i class="p-bar"></i><i class="p-noise"></i>
+		</div>
+		<figcaption class="osd" aria-hidden="true"><span class="rec">PLAY</span><span>CH 03</span></figcaption>
+	</figure>
 </section>`;
 }
 
@@ -302,8 +340,9 @@ for ( const f of readdirSync( join( SRC, 'pages' ) ).filter( ( x ) => x.endsWith
 		description: meta.summary,
 		path: `${ slug }/`,
 		active: slug,
-		body: `<section class="wrap page-head"><p class="crumb"><span class="dim">$</span> cat ${ slug }.md</p><h1 class="page-title">${ esc( meta.title ) }</h1></section>
-<section class="wrap"><div class="prose">${ md.render( body ) }</div></section>`,
+		bodyClass: slug === 'about' ? 'is-about' : '',
+		body: `${ slug === 'about' ? aboutHead( meta.title ) : `<section class="wrap page-head"><p class="crumb"><span class="dim">$</span> cat ${ slug }.md</p><h1 class="page-title">${ esc( meta.title ) }</h1></section>` }
+<section class="wrap"><div class="prose">${ md.render( body ) }</div></section>${ slug === 'about' ? TINT : '' }`,
 	} ) );
 }
 
