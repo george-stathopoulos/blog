@@ -221,9 +221,7 @@ LOADING BAD JOKES ....... OK</pre>
 </section>`;
 }
 
-// The portrait is a grey tone map (assets/george-signal.png). This filter colours it with the current theme
-// (bright = text colour, dark = page colour), so it follows the colour picker.
-const TINT = `<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="tint" color-interpolation-filters="sRGB" x="0" y="0" width="100%" height="100%"><feFlood style="flood-color:var(--fg)" result="fg"/><feBlend in="fg" in2="SourceGraphic" mode="multiply" result="a"/><feComponentTransfer in="SourceGraphic" result="inv"><feFuncR type="linear" slope="-1" intercept="1"/><feFuncG type="linear" slope="-1" intercept="1"/><feFuncB type="linear" slope="-1" intercept="1"/></feComponentTransfer><feFlood style="flood-color:var(--bg)" result="bg"/><feBlend in="bg" in2="inv" mode="multiply" result="b"/><feComposite in="a" in2="b" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/></filter></svg>`;
+// The portrait is a grey tone map (assets/george-signal.png); the CSS colours it with the current theme.
 
 function aboutHead( title ) {
 	const img = `${ SITE.base }assets/george-signal.png`;
@@ -347,7 +345,7 @@ for ( const f of readdirSync( join( SRC, 'pages' ) ).filter( ( x ) => x.endsWith
 		active: slug,
 		bodyClass: slug === 'about' ? 'is-about' : '',
 		body: `${ slug === 'about' ? aboutHead( meta.title ) : `<section class="wrap page-head"><p class="crumb"><span class="dim">$</span> cat ${ slug }.md</p><h1 class="page-title">${ esc( meta.title ) }</h1></section>` }
-<section class="wrap"><div class="prose">${ md.render( body ) }</div></section>${ slug === 'about' ? TINT : '' }`,
+<section class="wrap"><div class="prose">${ md.render( body ) }</div></section>`,
 	} ) );
 }
 
