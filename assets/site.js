@@ -156,6 +156,42 @@
 		}
 	}
 
+	/* Post title: turns and slides into the empty left margin as you scroll ----- */
+	var slot = document.querySelector( '[data-title-slot]' );
+	if ( slot && ! reduce ) {
+		var title = slot.firstElementChild;
+		var barEl = document.querySelector( '.bar' );
+		var frame = 0;
+		var smooth = function ( t ) { return t * t * ( 3 - 2 * t ); };
+		var turn = function () {
+			frame = 0;
+			var vw = window.innerWidth, vh = window.innerHeight;
+			var barH = barEl ? barEl.offsetHeight : 64;
+			var prose = document.querySelector( '.post .prose' );
+			var colLeft = prose ? prose.getBoundingClientRect().left : 0;
+			var w = slot.offsetWidth, h = title.offsetHeight;
+			// The rotated title has to fit in the left margin, and in the height of the window.
+			var fit = Math.min( 1, ( colLeft - 56 ) / h, ( vh - barH - 90 ) / w );
+			if ( fit < 0.55 ) { title.style.transform = ''; title.style.filter = ''; title.style.opacity = ''; return; }
+			var max = document.documentElement.scrollHeight - vh;
+			var end = Math.max( 1, Math.min( max * 0.3, vh * 0.8 ) ); // never more than 30% of the page
+			var p = smooth( Math.min( 1, Math.max( 0, window.scrollY / end ) ) );
+			var r = slot.getBoundingClientRect();
+			var tx = ( colLeft / 2 ) - ( r.left + w / 2 );
+			var ty = ( barH + ( vh - barH ) / 2 ) - ( r.top + h / 2 );
+			var sc = 1 + ( fit - 1 ) * p;
+			var blur = Math.sin( Math.PI * p ) * 7;
+			title.style.transform = 'translate(' + ( tx * p ).toFixed( 1 ) + 'px,' + ( ty * p ).toFixed( 1 ) + 'px) rotate(' + ( -90 * p ).toFixed( 2 ) + 'deg) scale(' + sc.toFixed( 4 ) + ')';
+			title.style.filter = blur > 0.05 ? 'blur(' + blur.toFixed( 2 ) + 'px)' : '';
+			title.style.opacity = ( 1 - Math.sin( Math.PI * p ) * 0.25 ).toFixed( 3 );
+		};
+		var ask = function () { if ( ! frame ) { frame = requestAnimationFrame( turn ); } };
+		window.addEventListener( 'scroll', ask, { passive: true } );
+		window.addEventListener( 'resize', ask );
+		window.addEventListener( 'load', ask );
+		ask();
+	}
+
 	/* Opening a post: dissolve the hero and list, then navigate ---------- */
 	var postPage = document.querySelector( '[data-post-page]' );
 	if ( postPage && ! reduce ) {

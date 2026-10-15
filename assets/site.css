@@ -308,3 +308,7 @@ a:focus-visible, button:focus-visible { outline: 2px dashed var(--fg); outline-o
 .pin { display: inline-flex; align-items: center; gap: 5px; color: var(--accent); }
 .pin svg { transform: rotate(35deg); }
 .row a:hover .pin { color: var(--bg); }
+
+/* The title turns into the left margin on wide screens (see site.js). */
+.title-slot { margin-bottom: 18px; }
+.title-slot .post-title { margin: 0; transform-origin: 50% 50%; will-change: transform, filter; }
