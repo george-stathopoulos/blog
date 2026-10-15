@@ -103,9 +103,6 @@
 				}
 				await wait( 260 );
 			}
-			var caret = document.createElement( 'span' );
-			caret.className = 'caret';
-			boot.lastElementChild.appendChild( caret );
 		} )();
 	}
 
