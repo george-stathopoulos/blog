@@ -16,11 +16,11 @@
 <link rel="alternate" type="application/rss+xml" title="George Stathopoulos's blog" href="https://george-stathopoulos.github.io/blog/feed.xml">
 <link rel="icon" href="/blog/assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/blog/assets/fonts/vt323-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/blog/assets/site.css?v=mv9a1hko">
-<script>document.documentElement.classList.remove('no-js');try{var t=localStorage.getItem('gs-blog-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="/blog/assets/site.css?v=mv9ah9m8">
+<script>document.documentElement.classList.remove('no-js');try{var t=localStorage.getItem('gs-blog-theme'),f=localStorage.getItem('gs-blog-font');if(t)document.documentElement.dataset.theme=t;if(f)document.documentElement.dataset.font=f}catch(e){}</script>
 <!-- Cloudflare Web Analytics: counts visits anonymously, no cookies --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "64332b427a604e879f82853393ebdb0d"}'></script><!-- End Cloudflare Web Analytics -->
 </head>
-<body class="">
+<body class="is-about">
 <a class="skip" href="#main">Skip to content</a>
 <div class="progress" aria-hidden="true"><i></i></div>
 <header class="bar">
@@ -28,13 +28,28 @@
 		<a class="prompt" href="/blog/" aria-label="Blog home"><span class="u">george</span>@<span class="h">blog</span>:<span class="p">~</span>$<span class="caret" aria-hidden="true"></span></a>
 		<nav id="nav" class="nav" aria-label="Main"><a href="/blog/"><span class="cmd">home</span> ~/</a><a href="/blog/posts/"><span class="cmd">ls</span> posts</a><a href="/blog/projects/"><span class="cmd">cd</span> projects</a><a href="/blog/about/" aria-current="page"><span class="cmd">cat</span> about</a><a href="/blog/feed.xml"><span class="cmd">rss</span> feed</a></nav>
 		<div class="bar-tools">
-			<button type="button" class="tool" data-theme-cycle aria-label="Change colour">[<span data-theme-name>amber</span>]</button>
+			<button type="button" class="tool" data-style-toggle aria-expanded="false" aria-controls="style-panel">[style]</button>
 			<button type="button" class="tool menu" data-menu aria-controls="nav" aria-expanded="false">[menu]</button>
+		</div>
+		<div class="style-panel" id="style-panel" hidden>
+			<p class="sp-h">colour</p>
+			<div class="sp-row"><button type="button" class="sp-btn" data-theme-set="amber" aria-pressed="false"><span class="sp-sw" style="--sw:#ffb000"></span>amber</button><button type="button" class="sp-btn" data-theme-set="green" aria-pressed="false"><span class="sp-sw" style="--sw:#33ff66"></span>green</button><button type="button" class="sp-btn" data-theme-set="white" aria-pressed="false"><span class="sp-sw" style="--sw:#f2f2f2"></span>white</button><button type="button" class="sp-btn" data-theme-set="paper" aria-pressed="false"><span class="sp-sw" style="--sw:#f4efe2"></span>paper</button></div>
+			<p class="sp-h">font</p>
+			<div class="sp-row"><button type="button" class="sp-btn" data-font-set="terminal" aria-pressed="false" style="font-family:'VT323', monospace">terminal</button><button type="button" class="sp-btn" data-font-set="plex" aria-pressed="false" style="font-family:'IBM Plex Mono', monospace">plex mono</button><button type="button" class="sp-btn" data-font-set="jetbrains" aria-pressed="false" style="font-family:'JetBrains Mono', monospace">jetbrains</button><button type="button" class="sp-btn" data-font-set="space" aria-pressed="false" style="font-family:'Space Mono', monospace">space mono</button><button type="button" class="sp-btn" data-font-set="system" aria-pressed="false" style="font-family:ui-monospace, Menlo, monospace">system</button></div>
 		</div>
 	</div>
 </header>
 <main id="main">
-<section class="wrap page-head"><p class="crumb"><span class="dim">$</span> cat about.md</p><h1 class="page-title">About</h1></section>
+<section class="wrap about-head">
+	<div class="page-head"><p class="crumb"><span class="dim">$</span> cat about.md</p><h1 class="page-title">About</h1></div>
+	<figure class="portrait" data-portrait>
+		<div class="p-stage">
+			<div class="p-shake"><img class="p-main" src="/blog/assets/george-signal.png" width="640" height="640" alt="George, as a half-lit portrait glowing like an old monitor"><img class="p-slice" src="/blog/assets/george-signal.png" alt="" aria-hidden="true"><img class="p-slice" src="/blog/assets/george-signal.png" alt="" aria-hidden="true"></div>
+			<i class="p-bar"></i><i class="p-noise"></i>
+		</div>
+		<figcaption class="osd" aria-hidden="true"><span class="rec">PLAY</span><span>CH 03</span></figcaption>
+	</figure>
+</section>
 <section class="wrap"><div class="prose"><p>Hi, I'm <strong>George</strong>. I live in Athens, and I have spent 13+ years in SaaS customer support and customer experience, mostly in the WordPress world. Today I lead customer experience and quality at WP Media.</p>
 <p>Support is a strange vantage point. You spend your days at the exact spot where a product meets a real person on a bad afternoon, and you see every gap: the missing setting, the confusing screen, the email thread that asks for a PHP version for the fourth time.</p>
 <p>So I started filling those gaps myself, in my own time. A plugin here, a web app there, a private dashboard when I got tired of guessing how many people visit my sites.</p>
@@ -54,7 +69,7 @@
 <li>Work: <a href="https://www.linkedin.com/in/georgstathopoulos/" rel="noopener">LinkedIn</a></li>
 </ul>
 <p>Opinions here are mine, not my employer's.</p>
-</div></section>
+</div></section><svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="tint" color-interpolation-filters="sRGB" x="0" y="0" width="100%" height="100%"><feFlood style="flood-color:var(--fg)" result="fg"/><feBlend in="fg" in2="SourceGraphic" mode="multiply" result="a"/><feComponentTransfer in="SourceGraphic" result="inv"><feFuncR type="linear" slope="-1" intercept="1"/><feFuncG type="linear" slope="-1" intercept="1"/><feFuncB type="linear" slope="-1" intercept="1"/></feComponentTransfer><feFlood style="flood-color:var(--bg)" result="bg"/><feBlend in="bg" in2="inv" mode="multiply" result="b"/><feComposite in="a" in2="b" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/></filter></svg>
 </main>
 <footer class="foot">
 	<div class="wrap">
@@ -63,6 +78,6 @@
 		<p class="foot-meta"><a href="https://george-stathopoulos.github.io/">george-stathopoulos.github.io</a> · <a href="https://github.com/george-stathopoulos/blog">source</a> · no cookies; visits are counted anonymously, with no personal data · made with <span class="heart" aria-label="love">♥</span> in Athens</p>
 	</div>
 </footer>
-<script src="/blog/assets/site.js?v=mv9a1hko" defer></script>
+<script src="/blog/assets/site.js?v=mv9ah9m8" defer></script>
 </body>
 </html>

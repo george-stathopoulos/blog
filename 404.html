@@ -17,8 +17,8 @@
 <link rel="alternate" type="application/rss+xml" title="George Stathopoulos's blog" href="https://george-stathopoulos.github.io/blog/feed.xml">
 <link rel="icon" href="/blog/assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/blog/assets/fonts/vt323-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/blog/assets/site.css?v=mv9a1hko">
-<script>document.documentElement.classList.remove('no-js');try{var t=localStorage.getItem('gs-blog-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="/blog/assets/site.css?v=mv9ah9m8">
+<script>document.documentElement.classList.remove('no-js');try{var t=localStorage.getItem('gs-blog-theme'),f=localStorage.getItem('gs-blog-font');if(t)document.documentElement.dataset.theme=t;if(f)document.documentElement.dataset.font=f}catch(e){}</script>
 <!-- Cloudflare Web Analytics: counts visits anonymously, no cookies --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "64332b427a604e879f82853393ebdb0d"}'></script><!-- End Cloudflare Web Analytics -->
 </head>
 <body class="">
@@ -29,8 +29,14 @@
 		<a class="prompt" href="/blog/" aria-label="Blog home"><span class="u">george</span>@<span class="h">blog</span>:<span class="p">~</span>$<span class="caret" aria-hidden="true"></span></a>
 		<nav id="nav" class="nav" aria-label="Main"><a href="/blog/"><span class="cmd">home</span> ~/</a><a href="/blog/posts/"><span class="cmd">ls</span> posts</a><a href="/blog/projects/"><span class="cmd">cd</span> projects</a><a href="/blog/about/"><span class="cmd">cat</span> about</a><a href="/blog/feed.xml"><span class="cmd">rss</span> feed</a></nav>
 		<div class="bar-tools">
-			<button type="button" class="tool" data-theme-cycle aria-label="Change colour">[<span data-theme-name>amber</span>]</button>
+			<button type="button" class="tool" data-style-toggle aria-expanded="false" aria-controls="style-panel">[style]</button>
 			<button type="button" class="tool menu" data-menu aria-controls="nav" aria-expanded="false">[menu]</button>
+		</div>
+		<div class="style-panel" id="style-panel" hidden>
+			<p class="sp-h">colour</p>
+			<div class="sp-row"><button type="button" class="sp-btn" data-theme-set="amber" aria-pressed="false"><span class="sp-sw" style="--sw:#ffb000"></span>amber</button><button type="button" class="sp-btn" data-theme-set="green" aria-pressed="false"><span class="sp-sw" style="--sw:#33ff66"></span>green</button><button type="button" class="sp-btn" data-theme-set="white" aria-pressed="false"><span class="sp-sw" style="--sw:#f2f2f2"></span>white</button><button type="button" class="sp-btn" data-theme-set="paper" aria-pressed="false"><span class="sp-sw" style="--sw:#f4efe2"></span>paper</button></div>
+			<p class="sp-h">font</p>
+			<div class="sp-row"><button type="button" class="sp-btn" data-font-set="terminal" aria-pressed="false" style="font-family:'VT323', monospace">terminal</button><button type="button" class="sp-btn" data-font-set="plex" aria-pressed="false" style="font-family:'IBM Plex Mono', monospace">plex mono</button><button type="button" class="sp-btn" data-font-set="jetbrains" aria-pressed="false" style="font-family:'JetBrains Mono', monospace">jetbrains</button><button type="button" class="sp-btn" data-font-set="space" aria-pressed="false" style="font-family:'Space Mono', monospace">space mono</button><button type="button" class="sp-btn" data-font-set="system" aria-pressed="false" style="font-family:ui-monospace, Menlo, monospace">system</button></div>
 		</div>
 	</div>
 </header>
@@ -44,6 +50,6 @@
 		<p class="foot-meta"><a href="https://george-stathopoulos.github.io/">george-stathopoulos.github.io</a> · <a href="https://github.com/george-stathopoulos/blog">source</a> · no cookies; visits are counted anonymously, with no personal data · made with <span class="heart" aria-label="love">♥</span> in Athens</p>
 	</div>
 </footer>
-<script src="/blog/assets/site.js?v=mv9a1hko" defer></script>
+<script src="/blog/assets/site.js?v=mv9ah9m8" defer></script>
 </body>
 </html>
