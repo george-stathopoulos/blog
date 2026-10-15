@@ -161,7 +161,7 @@ ${ jsonLd }</head>
 <div class="progress" aria-hidden="true"><i></i></div>
 <header class="bar">
 	<div class="wrap bar-in">
-		<a class="prompt" href="${ SITE.base }" aria-label="Blog home"><span class="u">george</span>@<span class="h">blog</span>:<span class="p">~</span>$<span class="caret" aria-hidden="true"></span></a>
+		<a class="prompt" href="${ SITE.base }" aria-label="Blog home"><span class="u">george</span>@<span class="h">blog</span>:<span class="p">~</span>$</a>
 		<nav id="nav" class="nav" aria-label="Main">${ nav }</nav>
 		<div class="bar-tools">
 			<button type="button" class="tool" data-style-toggle aria-expanded="false" aria-controls="style-panel">[style]</button>

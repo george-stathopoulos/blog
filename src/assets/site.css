@@ -95,7 +95,6 @@ a:focus-visible, button:focus-visible { outline: 2px dashed var(--fg); outline-o
 .boot { margin: 0 0 clamp(16px, 4vh, 36px); font: 16px/1.5 var(--body); color: var(--dim); white-space: pre-wrap; min-height: 9.2em; }
 .boot .ok { color: var(--accent); font-weight: 400; }
 .boot .err { color: #ff4d4d; font-weight: 400; text-shadow: 0 0 8px rgba(255, 77, 77, .6); animation: blink 1.05s steps(1) 3; }
-.boot .caret { width: .55em; height: 1em; margin-left: .3em; }
 :root[data-theme="paper"] .boot .err { color: #c0261c; text-shadow: none; }
 .hero-title .br { display: none; }
 .hero-title { margin: 0; font: var(--dw) calc(clamp(52px, min(10.4vw, 8.4vh), 118px) * var(--ds))/.95 var(--display); color: var(--fg); text-shadow: var(--glow); letter-spacing: .01em; text-wrap: balance; }
@@ -274,7 +273,7 @@ a:focus-visible, button:focus-visible { outline: 2px dashed var(--fg); outline-o
 .osd { position: absolute; left: 6%; right: 6%; bottom: 5%; display: flex; justify-content: space-between; font: var(--dw) calc(24px * var(--ds))/1 var(--display); color: var(--fg); text-shadow: var(--glow); opacity: 0; letter-spacing: .04em; }
 .portrait.on .p-stage { animation: signal-in 2.2s steps(1) forwards; }
 .portrait.on .osd { animation: osd-in .4s 1.6s forwards; }
-.osd .rec::before { content: "\25CF "; animation: blink 1.05s steps(1) infinite; }
+.osd .rec::before { content: "\25CF "; }
 @keyframes signal-in {
 	0% { opacity: 0; transform: translateX(0) scaleY(1); }
 	8% { opacity: .5; transform: translateX(-18px) scaleY(.96); }
