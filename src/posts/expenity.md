@@ -1,5 +1,5 @@
 ---
-title: "Expenity: a calmer way to keep track of money"
+title: "Expenity: know where your money goes"
 date: 2026-10-15
 order: 80
 summary: A free, open-source money app for expenses, income, bills, budgets and goals. It runs on every device, signs you in with a passkey, lets family share a wallet, speaks Greek, and tells you plainly what it can't do yet.
@@ -15,7 +15,7 @@ So Expenity grew up. It is still a web app, still free, and still honest about i
 
 Most money apps fail in one of three ways. They live on one phone, so a new phone or a partner on a different one breaks everything. They want your bank login before they help, which is a lot of trust for a first date. Or they feel like a spreadsheet with a logo, and you stop opening them.
 
-What I wanted was fast to add to, calm to look at, and clear about where my data lives.
+What I wanted was fast to add to, clean to look at, and clear about where my data lives.
 
 ## What it does
 
