@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mission Control: counting visits without selling anyone out | George Stathopoulos's blog</title>
+<meta name="description" content="I wanted to know if anyone visits my sites. Without cookies, ads or a spyware dashboard. So I built a very private, very boring one.">
+<link rel="canonical" href="https://george-stathopoulos.github.io/blog/posts/mission-control/">
+<meta name="theme-color" content="#0b0a08">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mission Control: counting visits without selling anyone out | George Stathopoulos's blog">
+<meta property="og:description" content="I wanted to know if anyone visits my sites. Without cookies, ads or a spyware dashboard. So I built a very private, very boring one.">
+<meta property="og:url" content="https://george-stathopoulos.github.io/blog/posts/mission-control/">
+<meta property="og:image" content="https://george-stathopoulos.github.io/blog/assets/social.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/rss+xml" title="George Stathopoulos's blog" href="https://george-stathopoulos.github.io/blog/feed.xml">
+<link rel="icon" href="/blog/assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/blog/assets/fonts/vt323-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/blog/assets/site.css?v=mv9a1hko">
+<script>document.documentElement.classList.remove('no-js');try{var t=localStorage.getItem('gs-blog-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<!-- Cloudflare Web Analytics: counts visits anonymously, no cookies --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "64332b427a604e879f82853393ebdb0d"}'></script><!-- End Cloudflare Web Analytics -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Mission Control: counting visits without selling anyone out","datePublished":"2026-10-15","description":"I wanted to know if anyone visits my sites. Without cookies, ads or a spyware dashboard. So I built a very private, very boring one.","author":{"@type":"Person","name":"George Stathopoulos","url":"https://george-stathopoulos.github.io/"},"mainEntityOfPage":"https://george-stathopoulos.github.io/blog/posts/mission-control/"}</script>
+</head>
+<body class="is-post">
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"><i></i></div>
+<header class="bar">
+	<div class="wrap bar-in">
+		<a class="prompt" href="/blog/" aria-label="Blog home"><span class="u">george</span>@<span class="h">blog</span>:<span class="p">~</span>$<span class="caret" aria-hidden="true"></span></a>
+		<nav id="nav" class="nav" aria-label="Main"><a href="/blog/"><span class="cmd">home</span> ~/</a><a href="/blog/posts/" aria-current="page"><span class="cmd">ls</span> posts</a><a href="/blog/projects/"><span class="cmd">cd</span> projects</a><a href="/blog/about/"><span class="cmd">cat</span> about</a><a href="/blog/feed.xml"><span class="cmd">rss</span> feed</a></nav>
+		<div class="bar-tools">
+			<button type="button" class="tool" data-theme-cycle aria-label="Change colour">[<span data-theme-name>amber</span>]</button>
+			<button type="button" class="tool menu" data-menu aria-controls="nav" aria-expanded="false">[menu]</button>
+		</div>
+	</div>
+</header>
+<main id="main">
+<article class="post wrap" data-post-page>
+	<header class="post-head">
+		<p class="crumb" data-type><span class="dim">$</span> cat posts/mission-control.md</p>
+		<h1 class="post-title">Mission Control: counting visits without selling anyone out</h1>
+		<p class="post-meta"><time datetime="2026-10-15">15 Oct 2026</time> · 2 min read · <span class="tag">#analytics</span> <span class="tag">#privacy</span> <span class="tag">#cloudflare</span></p>
+		<p class="post-lede">I wanted to know if anyone visits my sites. Without cookies, ads or a spyware dashboard. So I built a very private, very boring one.</p>
+	</header>
+	<div class="prose"><p>You build a handful of websites. You wonder, quietly, if anyone has visited any of them. You open an analytics tool, it asks for cookie consent, a data processing agreement and your firstborn.</p>
+<p>I wanted something smaller.</p>
+<h2>The gap</h2>
+<p>Cloudflare Web Analytics is exactly the right kind of tool: it counts page views and visits, no cookies, no personal data. But there's a catch for how I publish. My project sites all live on <strong>one host</strong>, <code>george-stathopoulos.github.io</code>, under different paths. In the dashboard that's one big blob. &quot;How is the SheetPilot site doing&quot; has no answer, only &quot;how is everything doing&quot;.</p>
+<h2>What I built</h2>
+<p>A private dashboard I call <strong>Mission Control</strong>. It's a single Cloudflare Worker that asks Cloudflare's own analytics for numbers and shows each of my sites <strong>separately</strong>: page views, visits, the change from the previous period, a daily or hourly trend, top pages, referrers, countries, devices, browsers.</p>
+<p>Sites that share a host are told apart by path. The portfolio on the root is told to ignore the project paths, or it would count them twice.</p>
+<h2>The boring part is the point</h2>
+<ul>
+<li>It sits behind a password and signs you out after a week.</li>
+<li>The analytics access token is read-only and <strong>never reaches the browser</strong>. The browser only ever sees finished numbers.</li>
+<li>It tells search engines to stay away. This is a dashboard for one person.</li>
+<li>Adding a new site is one config entry and a push.</li>
+</ul>
+<p>I don't track <em>people</em>. I count visits. The difference matters to me, and it's the same reason I tell visitors on every site that nothing personal is collected.</p>
+<h2>What it taught me</h2>
+<p>Small numbers are fine, by the way. A site is not a failure because eleven people visited it. Eleven people is a good dinner party.</p>
+<p>It's private because it's mine, but I'd happily describe how it works to anyone building their own. Ask me, and mind the password.</p>
+</div>
+	<p class="eof" aria-hidden="true">-- EOF --</p>
+	<aside class="project-box reveal"><p class="crumb"><span class="dim">$</span> cat project.info</p><h2>Mission Control</h2><p>One private dashboard for the visits to all of these sites.</p><p class="kind">Private tool</p><p> </p></aside>
+	<nav class="pager" aria-label="More posts">
+		<a href="/blog/posts/sheetpilot/"><small>&lt; older</small><span>SheetPilot: your spreadsheet, but it talks back</span></a>
+		<a class="next" href="/blog/posts/mitos-checklist/"><small>newer &gt;</small><span>Mitos Checklist: Greek bureaucracy, tick by tick</span></a>
+	</nav>
+	<p class="back"><a href="/blog/posts/">&lt; cd ..</a></p>
+</article>
+</main>
+<footer class="foot">
+	<div class="wrap">
+		<p class="foot-line"><span class="dim">$</span> ls ~/projects</p>
+		<ul class="foot-projects"><li><a href="https://george-stathopoulos.github.io/gatehouse/">Gatehouse</a><span> AI governance and cost control for WordPress</span></li><li><a href="https://george-stathopoulos.github.io/helpdesk-hero/">Helpdesk Hero</a><span> WordPress support with diagnostics and password-free access</span></li><li><a href="https://george-stathopoulos.github.io/fixpass/">Fixpass</a><span> Spotlight the problem and give support safe, temporary access</span></li><li><a href="https://george-stathopoulos.github.io/sheetpilot/">SheetPilot</a><span> Turn any spreadsheet into an interactive dashboard, in your browser</span></li><li><a href="https://github.com/george-stathopoulos/mitos-checklist">Mitos Checklist</a><span> Greek public-service procedures as tick-off checklists</span></li></ul>
+		<p class="foot-meta"><a href="https://george-stathopoulos.github.io/">george-stathopoulos.github.io</a> · <a href="https://github.com/george-stathopoulos/blog">source</a> · no cookies; visits are counted anonymously, with no personal data · made with <span class="heart" aria-label="love">♥</span> in Athens</p>
+	</div>
+</footer>
+<script src="/blog/assets/site.js?v=mv9a1hko" defer></script>
+</body>
+</html>

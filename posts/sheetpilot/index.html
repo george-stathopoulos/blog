@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SheetPilot: your spreadsheet, but it talks back | George Stathopoulos's blog</title>
+<meta name="description" content="Most teams keep what matters in spreadsheets, and then only store it. SheetPilot reads the sheet and tells you what stands out. Nothing leaves your browser.">
+<link rel="canonical" href="https://george-stathopoulos.github.io/blog/posts/sheetpilot/">
+<meta name="theme-color" content="#0b0a08">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SheetPilot: your spreadsheet, but it talks back | George Stathopoulos's blog">
+<meta property="og:description" content="Most teams keep what matters in spreadsheets, and then only store it. SheetPilot reads the sheet and tells you what stands out. Nothing leaves your browser.">
+<meta property="og:url" content="https://george-stathopoulos.github.io/blog/posts/sheetpilot/">
+<meta property="og:image" content="https://george-stathopoulos.github.io/blog/assets/social.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/rss+xml" title="George Stathopoulos's blog" href="https://george-stathopoulos.github.io/blog/feed.xml">
+<link rel="icon" href="/blog/assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/blog/assets/fonts/vt323-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/blog/assets/site.css?v=mv9a1hko">
+<script>document.documentElement.classList.remove('no-js');try{var t=localStorage.getItem('gs-blog-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<!-- Cloudflare Web Analytics: counts visits anonymously, no cookies --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "64332b427a604e879f82853393ebdb0d"}'></script><!-- End Cloudflare Web Analytics -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"SheetPilot: your spreadsheet, but it talks back","datePublished":"2026-10-15","description":"Most teams keep what matters in spreadsheets, and then only store it. SheetPilot reads the sheet and tells you what stands out. Nothing leaves your browser.","author":{"@type":"Person","name":"George Stathopoulos","url":"https://george-stathopoulos.github.io/"},"mainEntityOfPage":"https://george-stathopoulos.github.io/blog/posts/sheetpilot/"}</script>
+</head>
+<body class="is-post">
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"><i></i></div>
+<header class="bar">
+	<div class="wrap bar-in">
+		<a class="prompt" href="/blog/" aria-label="Blog home"><span class="u">george</span>@<span class="h">blog</span>:<span class="p">~</span>$<span class="caret" aria-hidden="true"></span></a>
+		<nav id="nav" class="nav" aria-label="Main"><a href="/blog/"><span class="cmd">home</span> ~/</a><a href="/blog/posts/" aria-current="page"><span class="cmd">ls</span> posts</a><a href="/blog/projects/"><span class="cmd">cd</span> projects</a><a href="/blog/about/"><span class="cmd">cat</span> about</a><a href="/blog/feed.xml"><span class="cmd">rss</span> feed</a></nav>
+		<div class="bar-tools">
+			<button type="button" class="tool" data-theme-cycle aria-label="Change colour">[<span data-theme-name>amber</span>]</button>
+			<button type="button" class="tool menu" data-menu aria-controls="nav" aria-expanded="false">[menu]</button>
+		</div>
+	</div>
+</header>
+<main id="main">
+<article class="post wrap" data-post-page>
+	<header class="post-head">
+		<p class="crumb" data-type><span class="dim">$</span> cat posts/sheetpilot.md</p>
+		<h1 class="post-title">SheetPilot: your spreadsheet, but it talks back</h1>
+		<p class="post-meta"><time datetime="2026-10-15">15 Oct 2026</time> · 2 min read · <span class="tag">#webapp</span> <span class="tag">#data</span> <span class="tag">#privacy</span></p>
+		<p class="post-lede">Most teams keep what matters in spreadsheets, and then only store it. SheetPilot reads the sheet and tells you what stands out. Nothing leaves your browser.</p>
+	</header>
+	<div class="prose"><p>Every company I've worked with runs on spreadsheets. They are the true database, the true CRM and the true source of the truth that three different people are editing right now.</p>
+<p>And they're mostly <strong>storage</strong>. The numbers go in. Someone builds a chart, once, in a hurry, and it breaks the next time a column moves.</p>
+<h2>The gap</h2>
+<p>I kept watching the same ritual. Export some data, open it, squint, make a pivot table, get a pivot table wrong, make another. The question is always the same: <em>what stands out?</em> Spreadsheets don't answer questions, they hold them.</p>
+<h2>What SheetPilot does</h2>
+<p>You drop in a CSV or an Excel file. SheetPilot works out what's in it, how it's calculated, and what stands out, and builds an interactive dashboard.</p>
+<ul>
+<li><strong>It reads messy sheets.</strong> It finds the real header row, copes with merged headers, semicolons and tabs, several tabs, and the date that could be March 4th or April 3rd.</li>
+<li><strong>It finds the logic.</strong> It shows your real Excel formulas in plain words, or infers sums and ratios from the numbers, and flags rows that break them.</li>
+<li><strong>It explains itself.</strong> A &quot;How I read your sheet&quot; box lists every choice it made, and lets you correct any of them. A tool that guesses silently is a tool you can't trust.</li>
+<li><strong>It writes findings in plain language,</strong> including the useful sentence &quot;nothing stands out&quot;, which is also a finding.</li>
+</ul>
+<p>There are fourteen looks, and I'm happy to admit I had to learn something here: companies don't want a dashboard with a busy background. So the professional templates come first, and the playful ones, including a Terminal one, sit in a separate group.</p>
+<h2>The privacy part, which is the whole point</h2>
+<p>Everything runs in your browser. Your file never uploads. No account. Even the share links work without a server, because the link itself carries the data.</p>
+<p>That also means I couldn't see your data if I wanted to. It's an unusually relaxing way to build a product.</p>
+<h2>A tip</h2>
+<p>If you can, drop in an <strong>Excel file rather than a CSV</strong>. A CSV flattens formulas into values, and the formulas are the interesting part.</p>
+<p>Try it on a sheet you're slightly embarrassed by. That's where it finds the best stuff.</p>
+</div>
+	<p class="eof" aria-hidden="true">-- EOF --</p>
+	<aside class="project-box reveal"><p class="crumb"><span class="dim">$</span> cat project.info</p><h2>SheetPilot</h2><p>Turn any spreadsheet into an interactive dashboard, in your browser.</p><p class="kind">Web app · free</p><p><a class="btn" href="https://george-stathopoulos.github.io/sheetpilot/">&gt; visit sheetpilot</a> <a class="btn ghost" href="https://github.com/george-stathopoulos/sheetpilot">&gt; source</a></p></aside>
+	<nav class="pager" aria-label="More posts">
+		<span></span>
+		<a class="next" href="/blog/posts/mission-control/"><small>newer &gt;</small><span>Mission Control: counting visits without selling anyone out</span></a>
+	</nav>
+	<p class="back"><a href="/blog/posts/">&lt; cd ..</a></p>
+</article>
+</main>
+<footer class="foot">
+	<div class="wrap">
+		<p class="foot-line"><span class="dim">$</span> ls ~/projects</p>
+		<ul class="foot-projects"><li><a href="https://george-stathopoulos.github.io/gatehouse/">Gatehouse</a><span> AI governance and cost control for WordPress</span></li><li><a href="https://george-stathopoulos.github.io/helpdesk-hero/">Helpdesk Hero</a><span> WordPress support with diagnostics and password-free access</span></li><li><a href="https://george-stathopoulos.github.io/fixpass/">Fixpass</a><span> Spotlight the problem and give support safe, temporary access</span></li><li><a href="https://george-stathopoulos.github.io/sheetpilot/">SheetPilot</a><span> Turn any spreadsheet into an interactive dashboard, in your browser</span></li><li><a href="https://github.com/george-stathopoulos/mitos-checklist">Mitos Checklist</a><span> Greek public-service procedures as tick-off checklists</span></li></ul>
+		<p class="foot-meta"><a href="https://george-stathopoulos.github.io/">george-stathopoulos.github.io</a> · <a href="https://github.com/george-stathopoulos/blog">source</a> · no cookies; visits are counted anonymously, with no personal data · made with <span class="heart" aria-label="love">♥</span> in Athens</p>
+	</div>
+</footer>
+<script src="/blog/assets/site.js?v=mv9a1hko" defer></script>
+</body>
+</html>

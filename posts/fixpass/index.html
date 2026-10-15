@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fixpass: point at the problem, skip the password | George Stathopoulos's blog</title>
+<meta name="description" content="Which button is broken? A plugin that lets you point at the problem, and lets support in safely.">
+<link rel="canonical" href="https://george-stathopoulos.github.io/blog/posts/fixpass/">
+<meta name="theme-color" content="#0b0a08">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fixpass: point at the problem, skip the password | George Stathopoulos's blog">
+<meta property="og:description" content="Which button is broken? A plugin that lets you point at the problem, and lets support in safely.">
+<meta property="og:url" content="https://george-stathopoulos.github.io/blog/posts/fixpass/">
+<meta property="og:image" content="https://george-stathopoulos.github.io/blog/assets/social.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/rss+xml" title="George Stathopoulos's blog" href="https://george-stathopoulos.github.io/blog/feed.xml">
+<link rel="icon" href="/blog/assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/blog/assets/fonts/vt323-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/blog/assets/site.css?v=mv9a1hko">
+<script>document.documentElement.classList.remove('no-js');try{var t=localStorage.getItem('gs-blog-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<!-- Cloudflare Web Analytics: counts visits anonymously, no cookies --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "64332b427a604e879f82853393ebdb0d"}'></script><!-- End Cloudflare Web Analytics -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Fixpass: point at the problem, skip the password","datePublished":"2026-10-15","description":"Which button is broken? A plugin that lets you point at the problem, and lets support in safely.","author":{"@type":"Person","name":"George Stathopoulos","url":"https://george-stathopoulos.github.io/"},"mainEntityOfPage":"https://george-stathopoulos.github.io/blog/posts/fixpass/"}</script>
+</head>
+<body class="is-post">
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"><i></i></div>
+<header class="bar">
+	<div class="wrap bar-in">
+		<a class="prompt" href="/blog/" aria-label="Blog home"><span class="u">george</span>@<span class="h">blog</span>:<span class="p">~</span>$<span class="caret" aria-hidden="true"></span></a>
+		<nav id="nav" class="nav" aria-label="Main"><a href="/blog/"><span class="cmd">home</span> ~/</a><a href="/blog/posts/" aria-current="page"><span class="cmd">ls</span> posts</a><a href="/blog/projects/"><span class="cmd">cd</span> projects</a><a href="/blog/about/"><span class="cmd">cat</span> about</a><a href="/blog/feed.xml"><span class="cmd">rss</span> feed</a></nav>
+		<div class="bar-tools">
+			<button type="button" class="tool" data-theme-cycle aria-label="Change colour">[<span data-theme-name>amber</span>]</button>
+			<button type="button" class="tool menu" data-menu aria-controls="nav" aria-expanded="false">[menu]</button>
+		</div>
+	</div>
+</header>
+<main id="main">
+<article class="post wrap" data-post-page>
+	<header class="post-head">
+		<p class="crumb" data-type><span class="dim">$</span> cat posts/fixpass.md</p>
+		<h1 class="post-title">Fixpass: point at the problem, skip the password</h1>
+		<p class="post-meta"><time datetime="2026-10-15">15 Oct 2026</time> · 2 min read · <span class="tag">#wordpress</span> <span class="tag">#support</span> <span class="tag">#security</span></p>
+		<p class="post-lede">Which button is broken? A plugin that lets you point at the problem, and lets support in safely.</p>
+	</header>
+	<div class="prose"><p>&quot;The button doesn't work.&quot;</p>
+<p>&quot;Which button?&quot;</p>
+<p>&quot;The blue one.&quot;</p>
+<p>&quot;We have eleven blue buttons.&quot;</p>
+<p>I've had versions of this conversation, in writing, over days. Everyone is polite, everyone is trying, and the problem just sits there, waiting for someone to look at it.</p>
+<h2>Where it came from</h2>
+<p>Fixpass started life tied to one specific plugin's world, as a small set of tools for the support team. The more I used it, the clearer it became that the idea didn't belong to any one product. Any site with a problem needs the same two things. So I took it out, made it standalone, and renamed it.</p>
+<h2>The two things</h2>
+<p><strong>One: show, don't describe.</strong> Spotlight lets the customer click the broken part of the page, or drag a box around it, and add a note. Support opens that page with the spot already highlighted. The address, the screen size, the browser and any errors on the page travel along. No screenshot-with-red-arrow required, though I respect the craft.</p>
+<p><strong>Two: let them in without sharing a secret.</strong> One click creates a login link for a temporary administrator account. No password changes hands. Access lasts from a day up to a week, ends by itself, and then the account is deleted. The customer can extend it, or end it early, from the same screen.</p>
+<h2>Details that took longer than they should have</h2>
+<ul>
+<li>A <strong>&quot;copy the details&quot;</strong> button. Login link, spots, site health, plugins and themes, formatted for an email. Boring on paper, and the one I'd miss most if it vanished.</li>
+<li><strong>Reusable or one-time links.</strong> One-time is the more cautious option. Reusable is the practical one, because support rarely fixes things in a single login.</li>
+<li><strong>Troubleshooting mode</strong> for support, which switches plugins off in <em>their</em> browser only. Your visitors never notice. Everything stays running.</li>
+</ul>
+<h2>What I learned</h2>
+<p>Security and kindness aren't opposites. The safest design is also the nicest one for the customer: nothing to remember, nothing to rotate, nothing left behind. I keep relearning this, and I'll probably keep relearning it.</p>
+<p>If you've ever sent a password in an email, Fixpass is for you, and no, I'm not judging. I'm only a little judging.</p>
+</div>
+	<p class="eof" aria-hidden="true">-- EOF --</p>
+	<aside class="project-box reveal"><p class="crumb"><span class="dim">$</span> cat project.info</p><h2>Fixpass</h2><p>Spotlight the problem and give support safe, temporary access.</p><p class="kind">WordPress plugin · free</p><p><a class="btn" href="https://george-stathopoulos.github.io/fixpass/">&gt; visit fixpass</a> <a class="btn ghost" href="https://github.com/george-stathopoulos/fixpass">&gt; source</a></p></aside>
+	<nav class="pager" aria-label="More posts">
+		<a href="/blog/posts/mitos-checklist/"><small>&lt; older</small><span>Mitos Checklist: Greek bureaucracy, tick by tick</span></a>
+		<a class="next" href="/blog/posts/helpdesk-hero/"><small>newer &gt;</small><span>Helpdesk Hero: please stop emailing me your password</span></a>
+	</nav>
+	<p class="back"><a href="/blog/posts/">&lt; cd ..</a></p>
+</article>
+</main>
+<footer class="foot">
+	<div class="wrap">
+		<p class="foot-line"><span class="dim">$</span> ls ~/projects</p>
+		<ul class="foot-projects"><li><a href="https://george-stathopoulos.github.io/gatehouse/">Gatehouse</a><span> AI governance and cost control for WordPress</span></li><li><a href="https://george-stathopoulos.github.io/helpdesk-hero/">Helpdesk Hero</a><span> WordPress support with diagnostics and password-free access</span></li><li><a href="https://george-stathopoulos.github.io/fixpass/">Fixpass</a><span> Spotlight the problem and give support safe, temporary access</span></li><li><a href="https://george-stathopoulos.github.io/sheetpilot/">SheetPilot</a><span> Turn any spreadsheet into an interactive dashboard, in your browser</span></li><li><a href="https://github.com/george-stathopoulos/mitos-checklist">Mitos Checklist</a><span> Greek public-service procedures as tick-off checklists</span></li></ul>
+		<p class="foot-meta"><a href="https://george-stathopoulos.github.io/">george-stathopoulos.github.io</a> · <a href="https://github.com/george-stathopoulos/blog">source</a> · no cookies; visits are counted anonymously, with no personal data · made with <span class="heart" aria-label="love">♥</span> in Athens</p>
+	</div>
+</footer>
+<script src="/blog/assets/site.js?v=mv9a1hko" defer></script>
+</body>
+</html>

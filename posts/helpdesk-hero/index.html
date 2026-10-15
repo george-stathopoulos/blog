@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Helpdesk Hero: please stop emailing me your password | George Stathopoulos's blog</title>
+<meta name="description" content="The first five emails of a support ticket are always the same questions. I tried to make them unnecessary.">
+<link rel="canonical" href="https://george-stathopoulos.github.io/blog/posts/helpdesk-hero/">
+<meta name="theme-color" content="#0b0a08">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Helpdesk Hero: please stop emailing me your password | George Stathopoulos's blog">
+<meta property="og:description" content="The first five emails of a support ticket are always the same questions. I tried to make them unnecessary.">
+<meta property="og:url" content="https://george-stathopoulos.github.io/blog/posts/helpdesk-hero/">
+<meta property="og:image" content="https://george-stathopoulos.github.io/blog/assets/social.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/rss+xml" title="George Stathopoulos's blog" href="https://george-stathopoulos.github.io/blog/feed.xml">
+<link rel="icon" href="/blog/assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/blog/assets/fonts/vt323-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/blog/assets/site.css?v=mv9a1hko">
+<script>document.documentElement.classList.remove('no-js');try{var t=localStorage.getItem('gs-blog-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<!-- Cloudflare Web Analytics: counts visits anonymously, no cookies --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "64332b427a604e879f82853393ebdb0d"}'></script><!-- End Cloudflare Web Analytics -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Helpdesk Hero: please stop emailing me your password","datePublished":"2026-10-15","description":"The first five emails of a support ticket are always the same questions. I tried to make them unnecessary.","author":{"@type":"Person","name":"George Stathopoulos","url":"https://george-stathopoulos.github.io/"},"mainEntityOfPage":"https://george-stathopoulos.github.io/blog/posts/helpdesk-hero/"}</script>
+</head>
+<body class="is-post">
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"><i></i></div>
+<header class="bar">
+	<div class="wrap bar-in">
+		<a class="prompt" href="/blog/" aria-label="Blog home"><span class="u">george</span>@<span class="h">blog</span>:<span class="p">~</span>$<span class="caret" aria-hidden="true"></span></a>
+		<nav id="nav" class="nav" aria-label="Main"><a href="/blog/"><span class="cmd">home</span> ~/</a><a href="/blog/posts/" aria-current="page"><span class="cmd">ls</span> posts</a><a href="/blog/projects/"><span class="cmd">cd</span> projects</a><a href="/blog/about/"><span class="cmd">cat</span> about</a><a href="/blog/feed.xml"><span class="cmd">rss</span> feed</a></nav>
+		<div class="bar-tools">
+			<button type="button" class="tool" data-theme-cycle aria-label="Change colour">[<span data-theme-name>amber</span>]</button>
+			<button type="button" class="tool menu" data-menu aria-controls="nav" aria-expanded="false">[menu]</button>
+		</div>
+	</div>
+</header>
+<main id="main">
+<article class="post wrap" data-post-page>
+	<header class="post-head">
+		<p class="crumb" data-type><span class="dim">$</span> cat posts/helpdesk-hero.md</p>
+		<h1 class="post-title">Helpdesk Hero: please stop emailing me your password</h1>
+		<p class="post-meta"><time datetime="2026-10-15">15 Oct 2026</time> · 2 min read · <span class="tag">#wordpress</span> <span class="tag">#support</span> <span class="tag">#security</span></p>
+		<p class="post-lede">The first five emails of a support ticket are always the same questions. I tried to make them unnecessary.</p>
+	</header>
+	<div class="prose"><p>Here is the shape of a thousand support tickets.</p>
+<ol>
+<li>&quot;My site is broken.&quot;</li>
+<li>&quot;Which version of WordPress and PHP?&quot;</li>
+<li>&quot;Which plugins are active?&quot;</li>
+<li>&quot;Can you send me a login?&quot;</li>
+<li>A password, in an email, in plain text, sent with the confidence of someone who has never been phished.</li>
+</ol>
+<p>By email five, nobody is having a good time. The customer feels interrogated, and the support person feels like a bank teller asking for a PIN.</p>
+<h2>The gap</h2>
+<p>Support teams need the same facts every time, and customers can't be expected to know where to find them. Meanwhile the usual answer to &quot;let me in&quot; is to share a password, which is the digital equivalent of leaving your house key under a plant pot labelled KEY.</p>
+<h2>What I wanted</h2>
+<p>A ticket that arrives <strong>already answered</strong>: versions, plugins, a health check that points at the likely cause. And a way in that doesn't involve a password at all: a one-time login that the customer controls, that ends on its own, and that leaves a record of what the support person did.</p>
+<h2>What it became</h2>
+<p>Three plugins, because it turns out support has two sides:</p>
+<ul>
+<li><strong>Helpdesk Hero</strong> is installed by the customer. They open a ticket from their dashboard, with diagnostics attached.</li>
+<li><strong>Helpdesk Hero Hub</strong> is installed by the support team on their own site. It collects tickets, and gives support one-click access to a customer's site.</li>
+<li><strong>Pro</strong> is the paid add-on for the team, with more control. Free for customers, free Hub for teams, Pro for the people who want more.</li>
+</ul>
+<p>The thing I'm proudest of is that <strong>the support team decides the rules.</strong> A policy says what access levels customers can choose, how long it lasts, what details are required. The customer plugin only offers what the policy allows, and the Hub checks again on its side. Nobody has to trust a button.</p>
+<h2>The design rule</h2>
+<p>The hard part isn't the code. It's deciding what the customer should never have to think about. If a customer has to understand &quot;temporary administrator accounts&quot;, I've failed. If they click one button and support shows up, I've won.</p>
+<p>The live demo has two sites talking to each other, so you can play both sides of a ticket. Be kind to the demo customer. They have enough problems.</p>
+</div>
+	<p class="eof" aria-hidden="true">-- EOF --</p>
+	<aside class="project-box reveal"><p class="crumb"><span class="dim">$</span> cat project.info</p><h2>Helpdesk Hero</h2><p>WordPress support with diagnostics and password-free access.</p><p class="kind">WordPress plugins · free</p><p><a class="btn" href="https://george-stathopoulos.github.io/helpdesk-hero/">&gt; visit helpdesk hero</a> <a class="btn ghost" href="https://github.com/george-stathopoulos/helpdesk-hero">&gt; source</a></p></aside>
+	<nav class="pager" aria-label="More posts">
+		<a href="/blog/posts/fixpass/"><small>&lt; older</small><span>Fixpass: point at the problem, skip the password</span></a>
+		<a class="next" href="/blog/posts/gatehouse/"><small>newer &gt;</small><span>Gatehouse: who is spending my AI money?</span></a>
+	</nav>
+	<p class="back"><a href="/blog/posts/">&lt; cd ..</a></p>
+</article>
+</main>
+<footer class="foot">
+	<div class="wrap">
+		<p class="foot-line"><span class="dim">$</span> ls ~/projects</p>
+		<ul class="foot-projects"><li><a href="https://george-stathopoulos.github.io/gatehouse/">Gatehouse</a><span> AI governance and cost control for WordPress</span></li><li><a href="https://george-stathopoulos.github.io/helpdesk-hero/">Helpdesk Hero</a><span> WordPress support with diagnostics and password-free access</span></li><li><a href="https://george-stathopoulos.github.io/fixpass/">Fixpass</a><span> Spotlight the problem and give support safe, temporary access</span></li><li><a href="https://george-stathopoulos.github.io/sheetpilot/">SheetPilot</a><span> Turn any spreadsheet into an interactive dashboard, in your browser</span></li><li><a href="https://github.com/george-stathopoulos/mitos-checklist">Mitos Checklist</a><span> Greek public-service procedures as tick-off checklists</span></li></ul>
+		<p class="foot-meta"><a href="https://george-stathopoulos.github.io/">george-stathopoulos.github.io</a> · <a href="https://github.com/george-stathopoulos/blog">source</a> · no cookies; visits are counted anonymously, with no personal data · made with <span class="heart" aria-label="love">♥</span> in Athens</p>
+	</div>
+</footer>
+<script src="/blog/assets/site.js?v=mv9a1hko" defer></script>
+</body>
+</html>

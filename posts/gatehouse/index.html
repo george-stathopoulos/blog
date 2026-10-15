@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gatehouse: who is spending my AI money? | George Stathopoulos's blog</title>
+<meta name="description" content="Every AI plugin shares one bill and one API key, and nobody tells you who ate what. So I built a gatehouse.">
+<link rel="canonical" href="https://george-stathopoulos.github.io/blog/posts/gatehouse/">
+<meta name="theme-color" content="#0b0a08">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gatehouse: who is spending my AI money? | George Stathopoulos's blog">
+<meta property="og:description" content="Every AI plugin shares one bill and one API key, and nobody tells you who ate what. So I built a gatehouse.">
+<meta property="og:url" content="https://george-stathopoulos.github.io/blog/posts/gatehouse/">
+<meta property="og:image" content="https://george-stathopoulos.github.io/blog/assets/social.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/rss+xml" title="George Stathopoulos's blog" href="https://george-stathopoulos.github.io/blog/feed.xml">
+<link rel="icon" href="/blog/assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/blog/assets/fonts/vt323-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/blog/assets/site.css?v=mv9a1hko">
+<script>document.documentElement.classList.remove('no-js');try{var t=localStorage.getItem('gs-blog-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<!-- Cloudflare Web Analytics: counts visits anonymously, no cookies --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "64332b427a604e879f82853393ebdb0d"}'></script><!-- End Cloudflare Web Analytics -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Gatehouse: who is spending my AI money?","datePublished":"2026-10-15","description":"Every AI plugin shares one bill and one API key, and nobody tells you who ate what. So I built a gatehouse.","author":{"@type":"Person","name":"George Stathopoulos","url":"https://george-stathopoulos.github.io/"},"mainEntityOfPage":"https://george-stathopoulos.github.io/blog/posts/gatehouse/"}</script>
+</head>
+<body class="is-post">
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"><i></i></div>
+<header class="bar">
+	<div class="wrap bar-in">
+		<a class="prompt" href="/blog/" aria-label="Blog home"><span class="u">george</span>@<span class="h">blog</span>:<span class="p">~</span>$<span class="caret" aria-hidden="true"></span></a>
+		<nav id="nav" class="nav" aria-label="Main"><a href="/blog/"><span class="cmd">home</span> ~/</a><a href="/blog/posts/" aria-current="page"><span class="cmd">ls</span> posts</a><a href="/blog/projects/"><span class="cmd">cd</span> projects</a><a href="/blog/about/"><span class="cmd">cat</span> about</a><a href="/blog/feed.xml"><span class="cmd">rss</span> feed</a></nav>
+		<div class="bar-tools">
+			<button type="button" class="tool" data-theme-cycle aria-label="Change colour">[<span data-theme-name>amber</span>]</button>
+			<button type="button" class="tool menu" data-menu aria-controls="nav" aria-expanded="false">[menu]</button>
+		</div>
+	</div>
+</header>
+<main id="main">
+<article class="post wrap" data-post-page>
+	<header class="post-head">
+		<p class="crumb" data-type><span class="dim">$</span> cat posts/gatehouse.md</p>
+		<h1 class="post-title">Gatehouse: who is spending my AI money?</h1>
+		<p class="post-meta"><time datetime="2026-10-15">15 Oct 2026</time> · 2 min read · <span class="tag">#wordpress</span> <span class="tag">#ai</span> <span class="tag">#privacy</span></p>
+		<p class="post-lede">Every AI plugin shares one bill and one API key, and nobody tells you who ate what. So I built a gatehouse.</p>
+	</header>
+	<div class="prose"><p>Picture a shared fridge in an office. Now picture that every plugin on your WordPress site is a colleague with an appetite, and the fridge is your AI provider account. Someone has finished the budget. Nobody did it. Everyone did it.</p>
+<p>That's the problem Gatehouse is for.</p>
+<h2>The gap</h2>
+<p>WordPress is getting a built-in way for plugins to talk to AI providers. That's great, and it also means a handful of plugins can quietly draw on <strong>one bill</strong>, with no view of who spends what and no way to say &quot;that's enough&quot;.</p>
+<p>And there's a second thing that nags me. Those plugins send text to a provider. Sometimes that text has a customer's name or email in it. As someone who's spent a career asking customers for their data very carefully, this makes me itchy.</p>
+<h2>What I wanted</h2>
+<p>Four things, in plain words:</p>
+<ul>
+<li><strong>Know the cost, per plugin and theme</strong>, call by call.</li>
+<li><strong>Stop spending before it happens.</strong> Monthly budgets and hourly limits checked before a request goes out, not an apology after the invoice.</li>
+<li><strong>See what personal data leaves the site,</strong> and strip it where it isn't needed. The provider's answer gets the real values put back, so nothing looks broken.</li>
+<li><strong>One set of instructions</strong> for the brand's voice, added to every request, so each plugin doesn't improvise its own.</li>
+</ul>
+<h2>How it works</h2>
+<p>It sits between the plugins and the provider, using WordPress's own AI hooks, so it doesn't wrap or fork anything. Think of the little booth at the gate of a building: it doesn't make the visitors' decisions for them, it just writes down who came in and what they carried.</p>
+<p>Prices are the tricky part, because they change. You can type your own. Gatehouse can optionally fetch a public model price list once a day. Failing that it falls back to a built-in table. I wrote down exactly where the numbers come from in the docs, because a cost tool that's vague about its own maths is a bad joke.</p>
+<h2>The honest bit</h2>
+<p>I also added a way to run a small AI model <strong>in your browser</strong>, so you can test on a development site without paying or sending anything anywhere. It's slower and smaller than the big hosted models. It's also free and private, which is a trade I like more every month.</p>
+<p>If AI is going to be in every plugin, somebody has to hold the clipboard at the gate. It's now my job on my own sites, and it can be yours too.</p>
+</div>
+	<p class="eof" aria-hidden="true">-- EOF --</p>
+	<aside class="project-box reveal"><p class="crumb"><span class="dim">$</span> cat project.info</p><h2>Gatehouse</h2><p>AI governance and cost control for WordPress.</p><p class="kind">WordPress plugin · free</p><p><a class="btn" href="https://george-stathopoulos.github.io/gatehouse/">&gt; visit gatehouse</a> <a class="btn ghost" href="https://github.com/george-stathopoulos/gatehouse">&gt; source</a></p></aside>
+	<nav class="pager" aria-label="More posts">
+		<a href="/blog/posts/helpdesk-hero/"><small>&lt; older</small><span>Helpdesk Hero: please stop emailing me your password</span></a>
+		<a class="next" href="/blog/posts/hello-world/"><small>newer &gt;</small><span>Hello, world. Again.</span></a>
+	</nav>
+	<p class="back"><a href="/blog/posts/">&lt; cd ..</a></p>
+</article>
+</main>
+<footer class="foot">
+	<div class="wrap">
+		<p class="foot-line"><span class="dim">$</span> ls ~/projects</p>
+		<ul class="foot-projects"><li><a href="https://george-stathopoulos.github.io/gatehouse/">Gatehouse</a><span> AI governance and cost control for WordPress</span></li><li><a href="https://george-stathopoulos.github.io/helpdesk-hero/">Helpdesk Hero</a><span> WordPress support with diagnostics and password-free access</span></li><li><a href="https://george-stathopoulos.github.io/fixpass/">Fixpass</a><span> Spotlight the problem and give support safe, temporary access</span></li><li><a href="https://george-stathopoulos.github.io/sheetpilot/">SheetPilot</a><span> Turn any spreadsheet into an interactive dashboard, in your browser</span></li><li><a href="https://github.com/george-stathopoulos/mitos-checklist">Mitos Checklist</a><span> Greek public-service procedures as tick-off checklists</span></li></ul>
+		<p class="foot-meta"><a href="https://george-stathopoulos.github.io/">george-stathopoulos.github.io</a> · <a href="https://github.com/george-stathopoulos/blog">source</a> · no cookies; visits are counted anonymously, with no personal data · made with <span class="heart" aria-label="love">♥</span> in Athens</p>
+	</div>
+</footer>
+<script src="/blog/assets/site.js?v=mv9a1hko" defer></script>
+</body>
+</html>
