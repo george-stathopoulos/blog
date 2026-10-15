@@ -13,11 +13,11 @@ That is the whole job of a bill reminder app: you tell it what you owe, it nags 
 
 ## The gap
 
-I read up on RemindPayBee, a perfectly sensible Android app. You record your payments, group them by category, pick when you want to be reminded, and it does that, with charts, 17 languages and no account. It also keeps everything on the device, which is admirable for privacy and a small adventure the day you change phones.
+Plenty of bill reminder apps are perfectly sensible. You record your payments, group them by category, pick when you want to be reminded, and they do that. Many keep everything on the device, which is admirable for privacy and a small adventure the day you change phones.
 
-Taking that as the starting point, the gaps are easy to list:
+The gaps, though, are easy to list:
 
-- It is Android only. Your partner on an iPhone, or you on a laptop, are on their own.
+- Most are tied to one kind of phone. Your partner on an iPhone, or you on a laptop, are on their own.
 - The data lives on one device. No sync, no second screen.
 - You type every bill by hand, which is exactly how trackers get abandoned.
 - The reminder is a notification, and a notification you muted is a bill you forgot.
