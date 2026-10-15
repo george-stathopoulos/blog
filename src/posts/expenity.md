@@ -48,4 +48,4 @@ I liked the clean, confident feel of Wallet by BudgetBakers, emerald green, soft
 
 ## Try it
 
-Open it, press **Load sample bills** if you want to look around first, and then add one real bill. Ten seconds. If the sentence box misreads something, [tell me the exact sentence](https://github.com/george-stathopoulos/expenity/issues) and I'll teach it.
+Open it, press **Load sample bills** if you want to look around first, and then add one real bill. Ten seconds. If the sentence box misreads something, [tell me the exact sentence](https://github.com/expenity/expenity/issues) and I'll teach it.
