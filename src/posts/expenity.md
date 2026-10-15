@@ -36,7 +36,7 @@ The first run is deliberately gentle: create an account, a short animation shows
 ## The honest part
 
 - With an account, your data is stored on Cloudflare (Workers and D1) so it can sync, behind your passkey. I don't look at it, and the code is public.
-- Email reminders and email invites are not on yet. They need a sending domain, and a website cannot wake a closed phone on its own, so for reminders when the app is closed there is still a calendar file with alarms.
+- Notifications arrive when the app is closed (one summary a day, at the hour you choose), but on iPhone only for the app added to the Home Screen. Email reminders and email invites are not on yet: they need a sending domain.
 - It has been tested in real Chrome with virtual passkeys and two simulated people sharing a wallet. It has not been tested on every phone. If something looks wrong on yours, please tell me.
 - The Greek is my best attempt and is waiting for a native speaker to correct it.
 
