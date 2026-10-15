@@ -304,3 +304,7 @@ a:focus-visible, button:focus-visible { outline: 2px dashed var(--fg); outline-o
 	.p-bar, .p-noise { display: none; }
 }
 .no-js .p-stage, .no-js .osd { opacity: 1; }
+
+.pin { display: inline-flex; align-items: center; gap: 5px; color: var(--accent); }
+.pin svg { transform: rotate(35deg); }
+.row a:hover .pin { color: var(--bg); }
