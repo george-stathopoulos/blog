@@ -108,12 +108,13 @@ const posts = readdirSync( join( SRC, 'posts' ) )
 			tags: ( meta.tags || '' ).split( ',' ).map( ( t ) => t.trim() ).filter( Boolean ),
 			project: PROJECTS.find( ( p ) => p.slug === meta.project ),
 			draft: meta.draft === 'true',
+			pinned: meta.pinned === 'true',
 			minutes: Math.max( 1, Math.round( words / 200 ) ),
 			html: md.render( body ),
 		};
 	} )
 	.filter( ( p ) => ! p.draft )
-	.sort( ( a, b ) => ( a.date < b.date ? 1 : a.date > b.date ? -1 : b.order - a.order ) );
+	.sort( ( a, b ) => Number( b.pinned ) - Number( a.pinned ) || ( a.date < b.date ? 1 : a.date > b.date ? -1 : b.order - a.order ) );
 
 /* ----------------------------------------------------------------- Layout */
 
@@ -192,11 +193,14 @@ ${ body }
 
 /* ------------------------------------------------------------------- Parts */
 
+// Pinned posts stay on top, marked with a pin.
+const PIN = '<span class="pin" title="Pinned"><svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M9.8 1.2 14.8 6.2 13.6 7.4 12.9 6.7 10.2 9.4 10.9 12.2 9.8 13.3 6.9 10.4 3.1 14.2 1.8 12.9 5.6 9.1 2.7 6.2 3.8 5.1 6.6 5.8 9.3 3.1 8.6 2.4z"/></svg><span class="pin-t">pinned</span></span>';
+
 function postRow( p, i ) {
 	const tags = p.tags.slice( 0, 2 ).map( ( t ) => `<span class="tag">#${ esc( t ) }</span>` ).join( ' ' );
 	return `<li class="row"><a href="${ SITE.base }posts/${ p.slug }/" data-post>
 	<span class="row-n">${ String( i + 1 ).padStart( 2, '0' ) }</span>
-	<span class="row-main"><span class="row-title">${ esc( p.title ) }</span><span class="row-sum">${ esc( p.summary ) }</span><span class="row-meta">${ dateLabel( p.date ) } · ${ p.minutes } min read ${ tags }</span></span>
+	<span class="row-main"><span class="row-title">${ esc( p.title ) }</span><span class="row-sum">${ esc( p.summary ) }</span><span class="row-meta">${ p.pinned ? PIN + ' · ' : '' }${ dateLabel( p.date ) } · ${ p.minutes } min read ${ tags }</span></span>
 	<span class="row-go" aria-hidden="true">→</span>
 </a></li>`;
 }
@@ -211,7 +215,7 @@ LOADING PROJECTS ........ OK
 LOADING BAD JOKES ....... OK</pre>
 		<h1 id="hero-title" class="hero-title">Notes from the gap <br class="br">between what exists <br class="br">and what people <br class="br">need<span class="caret big" aria-hidden="true"></span></h1>
 		<p class="hero-sub">I'm George. I build small tools that fill gaps I keep running into, and every one of them gets a post here: why it exists, what went wrong, what I hoped for.</p>
-		<p class="hero-cta"><a class="btn" href="${ SITE.base }posts/${ posts[ 0 ].slug }/" data-post>&gt; read the latest post</a> <a class="btn ghost" href="#posts">&gt; ls posts</a></p>
+		<p class="hero-cta"><a class="btn" href="${ SITE.base }posts/${ ( posts.find( ( p ) => ! p.pinned ) || posts[ 0 ] ).slug }/" data-post>&gt; read the latest post</a> <a class="btn ghost" href="#posts">&gt; ls posts</a></p>
 	</div>
 	<a class="scroll-hint" href="#posts" aria-label="Scroll to the posts">scroll<span>↓</span></a>
 </section>`;
@@ -287,7 +291,7 @@ posts.forEach( ( p, i ) => {
 	<header class="post-head">
 		<p class="crumb" data-type><span class="dim">$</span> cat posts/${ p.slug }.md</p>
 		<h1 class="post-title">${ esc( p.title ) }</h1>
-		<p class="post-meta"><time datetime="${ p.date }">${ dateLabel( p.date ) }</time> · ${ p.minutes } min read${ p.tags.length ? ' · ' + p.tags.map( ( t ) => `<span class="tag">#${ esc( t ) }</span>` ).join( ' ' ) : '' }</p>
+		<p class="post-meta">${ p.pinned ? PIN + ' · ' : '' }<time datetime="${ p.date }">${ dateLabel( p.date ) }</time> · ${ p.minutes } min read${ p.tags.length ? ' · ' + p.tags.map( ( t ) => `<span class="tag">#${ esc( t ) }</span>` ).join( ' ' ) : '' }</p>
 		<p class="post-lede">${ esc( p.summary ) }</p>
 	</header>
 	<div class="prose">${ p.html }</div>

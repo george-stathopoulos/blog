@@ -1,7 +1,7 @@
 ---
 title: "Mission Control: counting visits without selling anyone out"
 date: 2026-10-15
-order: 50
+order: 60
 summary: I wanted to know if anyone visits my sites. Without cookies, ads or a spyware dashboard. So I built a very private, very boring one.
 tags: analytics, privacy, cloudflare
 project: mission-control

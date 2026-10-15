@@ -1,7 +1,7 @@
 ---
 title: "Mitos Checklist: Greek bureaucracy, tick by tick"
 date: 2026-10-15
-order: 60
+order: 50
 summary: Starting a business in Greece means a pile of procedures. The data exists. I turned it into checklists you can actually follow.
 tags: wordpress, greece, civic
 project: mitos-checklist

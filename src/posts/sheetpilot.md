@@ -1,7 +1,7 @@
 ---
 title: "SheetPilot: your spreadsheet, but it talks back"
 date: 2026-10-15
-order: 40
+order: 70
 summary: Most teams keep what matters in spreadsheets, and then only store it. SheetPilot reads the sheet and tells you what stands out. Nothing leaves your browser.
 tags: webapp, data, privacy
 project: sheetpilot

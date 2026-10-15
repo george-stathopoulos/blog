@@ -1,7 +1,7 @@
 ---
 title: "Gatehouse: who is spending my AI money?"
 date: 2026-10-15
-order: 90
+order: 20
 summary: Every AI plugin shares one bill and one API key, and nobody tells you who ate what. So I built a gatehouse.
 tags: wordpress, ai, privacy
 project: gatehouse

@@ -1,7 +1,7 @@
 ---
 title: "Expenity: the bill reminder that doesn't live on one phone"
 date: 2026-10-15
-order: 35
+order: 80
 summary: Bill reminder apps are great until you change phones. Expenity is a free web app for bills and subscriptions that runs everywhere, speaks Greek, and is honest about what a website can't do.
 tags: webapp, finance, privacy, greek
 project: expenity

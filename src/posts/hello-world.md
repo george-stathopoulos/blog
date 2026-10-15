@@ -2,6 +2,7 @@
 title: "Hello, world. Again."
 date: 2026-10-15
 order: 100
+pinned: true
 summary: Why a support person with a day job keeps building tools, and why each one now gets a story.
 tags: meta, welcome
 ---

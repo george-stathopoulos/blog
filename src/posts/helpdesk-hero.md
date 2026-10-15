@@ -1,7 +1,7 @@
 ---
 title: "Helpdesk Hero: please stop emailing me your password"
 date: 2026-10-15
-order: 80
+order: 30
 summary: The first five emails of a support ticket are always the same questions. I tried to make them unnecessary.
 tags: wordpress, support, security
 project: helpdesk-hero

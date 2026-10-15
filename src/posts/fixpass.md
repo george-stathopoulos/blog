@@ -1,7 +1,7 @@
 ---
 title: "Fixpass: point at the problem, skip the password"
 date: 2026-10-15
-order: 70
+order: 40
 summary: Which button is broken? A plugin that lets you point at the problem, and lets support in safely.
 tags: wordpress, support, security
 project: fixpass
