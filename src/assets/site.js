@@ -81,27 +81,27 @@
 		lines.forEach( function ( l ) { l.dataset.html = l.innerHTML; l.textContent = ''; } );
 		var wait = function ( ms ) { return new Promise( function ( r ) { setTimeout( r, ms ); } ); };
 		var typeInto = async function ( node, text, speed ) {
-			for ( var i = 1; i <= text.length; i++ ) { node.textContent = text.slice( 0, i ); await wait( speed + Math.random() * 18 ); }
+			for ( var i = 1; i <= text.length; i++ ) { node.textContent = text.slice( 0, i ); await wait( speed + Math.random() * 20 ); }
 		};
 		( async function run() {
-			await wait( 350 );
+			await wait( 700 );
 			for ( var n = 0; n < lines.length; n++ ) {
 				var l = lines[ n ];
 				var text = l.dataset.text.replace( /&gt;/g, '>' );
 				var out = document.createElement( 'span' );
 				l.appendChild( out );
-				await typeInto( out, text, 26 );
+				await typeInto( out, text, 40 );
 				if ( l.dataset.status ) {
 					var dots = Math.max( 3, WIDTH - text.length );
-					for ( var d = 1; d <= dots; d++ ) { out.textContent = text + ' ' + new Array( d + 1 ).join( '.' ); await wait( 22 ); }
-					await wait( n === lines.length - 2 ? 700 : 260 );
+					for ( var d = 1; d <= dots; d++ ) { out.textContent = text + ' ' + new Array( d + 1 ).join( '.' ); await wait( 32 ); }
+					await wait( l.dataset.err ? 1000 : 420 );
 					var st = document.createElement( 'b' );
 					st.className = l.dataset.err ? 'err' : 'ok';
 					st.textContent = ' ' + l.dataset.status;
 					l.appendChild( st );
-					if ( l.dataset.err ) { await wait( 450 ); }
+					if ( l.dataset.err ) { await wait( 700 ); }
 				}
-				await wait( 180 );
+				await wait( 260 );
 			}
 			var caret = document.createElement( 'span' );
 			caret.className = 'caret';
