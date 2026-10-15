@@ -290,7 +290,7 @@ posts.forEach( ( p, i ) => {
 	const body = `<article class="post wrap" data-post-page>
 	<header class="post-head">
 		<p class="crumb" data-type><span class="dim">$</span> cat posts/${ p.slug }.md</p>
-		<h1 class="post-title">${ esc( p.title ) }</h1>
+		<div class="title-slot" data-title-slot><h1 class="post-title">${ esc( p.title ) }</h1></div>
 		<p class="post-meta">${ p.pinned ? PIN + ' · ' : '' }<time datetime="${ p.date }">${ dateLabel( p.date ) }</time> · ${ p.minutes } min read${ p.tags.length ? ' · ' + p.tags.map( ( t ) => `<span class="tag">#${ esc( t ) }</span>` ).join( ' ' ) : '' }</p>
 		<p class="post-lede">${ esc( p.summary ) }</p>
 	</header>
