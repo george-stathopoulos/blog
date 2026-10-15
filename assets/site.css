@@ -261,7 +261,7 @@ a:focus-visible, button:focus-visible { outline: 2px dashed var(--fg); outline-o
 .about-head { display: grid; grid-template-columns: 1fr minmax(260px, 430px); gap: 24px; align-items: center; padding-block: 56px 28px; }
 .about-head .page-head { padding: 0; width: auto; margin: 0; }
 .portrait { margin: 0; position: relative; }
-.p-stage { position: relative; aspect-ratio: 1; background: #000; overflow: hidden; filter: url(#tint); opacity: 0; -webkit-mask-image: radial-gradient(ellipse 62% 62% at 62% 50%, #000 62%, transparent 100%); mask-image: radial-gradient(ellipse 62% 62% at 62% 50%, #000 62%, transparent 100%); }
+.p-stage { position: relative; aspect-ratio: 1; background: #000; overflow: hidden; isolation: isolate; opacity: 0; -webkit-mask-image: radial-gradient(ellipse 62% 62% at 62% 50%, #000 62%, transparent 100%); mask-image: radial-gradient(ellipse 62% 62% at 62% 50%, #000 62%, transparent 100%); }
 .p-stage img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; mix-blend-mode: screen; image-rendering: auto; }
 .p-slice { opacity: 0; }
 .p-bar { position: absolute; left: 0; right: 0; height: 14%; top: -20%; background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, .22), transparent); mix-blend-mode: screen; animation: roll 7s linear infinite; }
@@ -318,3 +318,15 @@ a:focus-visible, button:focus-visible { outline: 2px dashed var(--fg); outline-o
 	.hero-cta { gap: 10px; }
 	.scroll-hint { display: none; }
 }
+
+/* The portrait is a grey tone map. Multiplying it by the text colour turns it amber (or green, or white),
+   and a "lighten" layer lifts the blacks to the page colour so no box shows. Plain CSS blending, no SVG
+   filter, so it also works on phones and tablets. */
+.p-bar, .p-noise { z-index: 1; }
+.p-stage::after, .p-stage::before { content: ""; position: absolute; inset: 0; pointer-events: none; }
+.p-stage::after { background: var(--fg); mix-blend-mode: multiply; z-index: 3; }
+.p-stage::before { background: var(--bg); mix-blend-mode: lighten; z-index: 4; }
+/* Paper: dark ink on a light page, so invert the tone map and multiply it into the page. */
+:root[data-theme="paper"] .p-stage { filter: invert(1); mix-blend-mode: multiply; }
+:root[data-theme="paper"] .p-stage::after { background: #fff; }
+:root[data-theme="paper"] .p-stage::before { display: none; }
