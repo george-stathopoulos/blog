@@ -30,7 +30,7 @@ const PROJECTS = [
 	{ slug: 'helpdesk-hero', name: 'Helpdesk Hero', url: 'https://george-stathopoulos.github.io/helpdesk-hero/', repo: 'https://github.com/george-stathopoulos/helpdesk-hero', text: 'WordPress support with diagnostics and password-free access', kind: 'WordPress plugins · free' },
 	{ slug: 'fixpass', name: 'Fixpass', url: 'https://george-stathopoulos.github.io/fixpass/', repo: 'https://github.com/george-stathopoulos/fixpass', text: 'Spotlight the problem and give support safe, temporary access', kind: 'WordPress plugin · free' },
 	{ slug: 'sheetpilot', name: 'SheetPilot', url: 'https://george-stathopoulos.github.io/sheetpilot/', repo: 'https://github.com/george-stathopoulos/sheetpilot', text: 'Turn any spreadsheet into an interactive dashboard, in your browser', kind: 'Web app · free' },
-	{ slug: 'duenest', name: 'Duenest', url: 'https://george-stathopoulos.github.io/duenest/', repo: 'https://github.com/george-stathopoulos/duenest', text: 'Bills and subscriptions, calmly in one place. English and Greek', kind: 'Web app · free' },
+	{ slug: 'expenity', name: 'Expenity', url: 'https://george-stathopoulos.github.io/expenity/', repo: 'https://github.com/george-stathopoulos/expenity', text: 'Bills and subscriptions, calmly in one place. English and Greek', kind: 'Web app · free' },
 	{ slug: 'mitos-checklist', name: 'Mitos Checklist', url: 'https://github.com/george-stathopoulos/mitos-checklist', repo: 'https://github.com/george-stathopoulos/mitos-checklist', text: 'Greek public-service procedures as tick-off checklists', kind: 'WordPress plugin · free' },
 	{ slug: 'mission-control', name: 'Mission Control', url: '', repo: '', text: 'One private dashboard for the visits to all of these sites', kind: 'Private tool' },
 ];
