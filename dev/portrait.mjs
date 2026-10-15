@@ -26,8 +26,8 @@ const dataUrl = await page.evaluate( async ( b64 ) => {
 	for ( let y = 0; y < H; y++ ) {
 		for ( let x = 0; x < W; x++ ) {
 			const u = x / W;
-			// Pixel size grows towards the left edge: 1 on the right half, up to 28 at the far left.
-			const bs = u > 0.5 ? 1 : Math.round( 1 + ( ( 0.5 - u ) / 0.5 ) ** 1.4 * 27 );
+			// Big, chunky pixels on the left half, in steps: 1 on the right, up to 44 at the far left.
+			const bs = u >= 0.56 ? 1 : u >= 0.46 ? 6 : u >= 0.37 ? 14 : u >= 0.26 ? 26 : 44;
 			const sx = Math.min( W - 1, Math.floor( x / bs ) * bs + ( bs >> 1 ) );
 			const sy = Math.min( H - 1, Math.floor( y / bs ) * bs + ( bs >> 1 ) );
 			const i = ( sy * W + sx ) * 4;
@@ -38,9 +38,8 @@ const dataUrl = await page.evaluate( async ( b64 ) => {
 			const inside = 1 - smooth( 0.55, 0.98, Math.hypot( ex, ey ) );
 			const wall = smooth( 0.8, 0.92, L ) * ( 1 - inside );
 			let t = ( 0.3 + 0.7 * Math.pow( L, 1.5 ) ) * ( 1 - wall );
-			// Ordered dither on the pixelated side so the blocks look like old video, not blur.
-			if ( bs > 1 ) { t = Math.min( 1, Math.max( 0, t + ( bayer[ ( ( y % 4 ) * 4 ) + ( x % 4 ) ] / 16 - 0.5 ) * 0.25 ) ); }
-			t *= smooth( 0.04, 0.58, u );
+			// The pixelated side is dark, almost black, and fades out towards the left edge.
+			t *= 0.05 + 0.95 * Math.pow( smooth( 0.1, 0.62, u ), 1.6 );
 			const v = Math.round( t * 255 );
 			const k = ( y * W + x ) * 4;
 			o.data[ k ] = o.data[ k + 1 ] = o.data[ k + 2 ] = v; o.data[ k + 3 ] = 255;
