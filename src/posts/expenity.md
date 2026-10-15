@@ -40,10 +40,6 @@ The first run is deliberately gentle: create an account, a short animation shows
 - It has been tested in real Chrome with virtual passkeys and two simulated people sharing a wallet. It has not been tested on every phone. If something looks wrong on yours, please tell me.
 - The Greek is my best attempt and is waiting for a native speaker to correct it.
 
-## The look
-
-I liked the clean, confident feel of Wallet by BudgetBakers: emerald green, soft mint, big numbers, calm cards. Expenity borrows the mood, not the pixels. Its own logo, its own colours, and eleven other ways to dress it.
-
 ## Try it
 
-Open it, create an account or choose **Try without an account**, and add one real expense. Ten seconds. If something is confusing, or a sentence is misread, [tell me](https://github.com/expenity/expenity/issues) and I'll fix it.
+[Open Expenity](https://expenity.github.io/expenity/app/), create an account or choose **Try without an account**, and add one real expense. Ten seconds. The [website](https://expenity.github.io/expenity/) and the [help center](https://expenity.github.io/expenity/docs/) explain the rest, and the code is on [GitHub](https://github.com/expenity/expenity). If something is confusing, or a sentence is misread, [tell me](https://github.com/expenity/expenity/issues) and I'll fix it.

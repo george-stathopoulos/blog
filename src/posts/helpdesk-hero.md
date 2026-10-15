@@ -39,4 +39,4 @@ The thing I'm proudest of is that **the support team decides the rules.** A poli
 
 The hard part isn't the code. It's deciding what the customer should never have to think about. If a customer has to understand "temporary administrator accounts", I've failed. If they click one button and support shows up, I've won.
 
-The live demo has two sites talking to each other, so you can play both sides of a ticket. Be kind to the demo customer. They have enough problems.
+The [live demo](https://george-stathopoulos.github.io/helpdesk-hero/demo/) has two sites talking to each other, so you can play both sides of a ticket. Be kind to the demo customer. They have enough problems.

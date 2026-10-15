@@ -36,4 +36,4 @@ That also means I couldn't see your data if I wanted to. It's an unusually relax
 
 If you can, drop in an **Excel file rather than a CSV**. A CSV flattens formulas into values, and the formulas are the interesting part.
 
-Try it on a sheet you're slightly embarrassed by. That's where it finds the best stuff.
+[Try SheetPilot](https://george-stathopoulos.github.io/sheetpilot/app/) on a sheet you're slightly embarrassed by. That's where it finds the best stuff.
