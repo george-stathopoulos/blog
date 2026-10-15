@@ -1,51 +1,49 @@
 ---
-title: "Expenity: the bill reminder that doesn't live on one phone"
+title: "Expenity: a calmer way to keep track of money"
 date: 2026-10-15
 order: 80
-summary: Bill reminder apps are great until you change phones. Expenity is a free web app for bills and subscriptions that runs everywhere, speaks Greek, and is honest about what a website can't do.
+summary: A free, open-source money app for expenses, income, bills, budgets and goals. It runs on every device, signs you in with a passkey, lets family share a wallet, speaks Greek, and tells you plainly what it can't do yet.
 tags: webapp, finance, privacy, greek
 project: expenity
 ---
 
-Nobody dreams of paying the electricity bill. We dream of *not forgetting* to pay it, which is a smaller dream and much more achievable.
+I started with a smaller goal: *never forget to pay the electricity bill*. A bill reminder. It worked, and then I kept wanting more from it, the way you do with anything you actually use. Where did the money go this month? Can I afford the trip? Why is the Netflix charge different again?
 
-That is the whole job of a bill reminder app: you tell it what you owe, it nags you at the right moment, the lights stay on.
+So Expenity grew up. It is still a web app, still free, and still honest about its limits. It is now a proper little money app.
 
 ## The gap
 
-Plenty of bill reminder apps are perfectly sensible. You record your payments, group them by category, pick when you want to be reminded, and they do that. Many keep everything on the device, which is admirable for privacy and a small adventure the day you change phones.
+Most money apps fail in one of three ways. They live on one phone, so a new phone or a partner on a different one breaks everything. They want your bank login before they help, which is a lot of trust for a first date. Or they feel like a spreadsheet with a logo, and you stop opening them.
 
-The gaps, though, are easy to list:
+What I wanted was fast to add to, calm to look at, and clear about where my data lives.
 
-- Most are tied to one kind of phone. Your partner on an iPhone, or you on a laptop, are on their own.
-- The data lives on one device. No sync, no second screen.
-- You type every bill by hand, which is exactly how trackers get abandoned.
-- The reminder is a notification, and a notification you muted is a bill you forgot.
+## What it does
 
-## What I wanted
+- **Add an expense in seconds.** A big keypad, a category, done. Or type a sentence, in English or Greek: *Coffee 3.50 yesterday*, *Καφές 3,50 χθες*, *Netflix 15.99 monthly on the 3rd*.
+- **Wallets in any currency.** Cash, bank, card, savings. Totals are converted with daily rates and marked as approximate, because "€10 + $5" is not a number.
+- **Budgets and goals.** A limit for food, a goal for a trip, your salary as recurring income. You see what is left, what you can spend per day, and when you will get there.
+- **Ideas from your own data.** You tell Expenity what you want: save for something, cut subscriptions, spend less on everyday things. It then points out specifics: this subscription costs €192 a year, delivery was €60 last month, here is what that would be worth towards your goal. It is arithmetic on your own numbers, done on your device, not advice.
+- **Reports.** Spending by category you can tap into, cash flow, trends, a 90-day forecast, subscriptions, and a table you can sort and export.
+- **Shared wallets.** Invite someone with a code or a link. They can edit or only view, and the server enforces it. Everything else of yours stays private.
+- **Twelve themes**, from minimal to paper notes to terminal green to synthwave, and a switch that turns the animations off.
 
-A bill reminder that is **a website**, so it runs on a phone, a tablet and a laptop without anyone's app store. That needs no account to be useful. That understands a sentence like *Netflix 15.99 monthly on the 3rd*. And that speaks Greek properly, because bills here have their own words: ΕΝΦΙΑ, ΔΕΗ, ΕΥΔΑΠ, and a "τριμηνιαία" that English has no single word for.
+## Accounts without passwords
 
-## What Expenity does today
+You sign in with a **passkey**: your fingerprint, face or device PIN. There is no password to forget or leak. You get recovery codes for the day you lose a phone, and you can add a second passkey on another device. Or skip the account and try it first; your data then stays in your browser.
 
-- **Add a bill in a sentence**, in English or in Greek, or from a template.
-- **Today, Calendar and Insights.** What is overdue, what is due this week, the next 13 weeks as bars, what every subscription costs per year, and a note when a price changed.
-- **Mark paid, undo, snooze, skip.** The next date is worked out for you, including the 31st in a 30-day month.
-- **A calendar file with alarms** that your own calendar app delivers, on every device, even when Expenity is closed.
-- **Backup, restore, CSV, and delete-everything**, because your bills are yours.
-
-It runs in the browser, stores everything on your device, installs like an app, and works offline.
+The first run is deliberately gentle: create an account, a short animation shows how to add Expenity to your home screen, then a skippable setup asks about your currency, your wallets and what you want help with. Nothing can be added before that is done or skipped, so nothing ends up in a wallet you didn't choose.
 
 ## The honest part
 
-I wanted the reminders to arrive even when the app is closed. A website cannot do that on its own. A closed page can't wake a phone; that takes a server and push notifications, and on iPhone only for apps added to the Home Screen.
-
-So Expenity tells you the truth: today it notifies you while it is open, and for everything else it hands you a calendar file, because calendars have been waking people up on time since before the web. Sync between devices, email and push reminders, and shared households are on the plan, in the repository, with the specs written. They need a small server, and I would rather say so than pretend.
+- With an account, your data lives on my server (Cloudflare Workers and D1). It is protected by your passkey, but it is **not end-to-end encrypted**. I can technically read it. I don't, and the code is public, but you deserve to know.
+- Email reminders and email invites are not on yet. They need a sending domain, and a website cannot wake a closed phone on its own, so for reminders when the app is closed there is still a calendar file with alarms.
+- It has been tested in real Chrome with virtual passkeys and two simulated people sharing a wallet. It has not been tested on every phone. If something looks wrong on yours, please tell me.
+- The Greek is my best attempt and is waiting for a native speaker to correct it.
 
 ## The look
 
-I liked the clean, confident feel of Wallet by BudgetBakers, emerald green, soft mint, big numbers, calm cards. Expenity borrows the mood, not the pixels: its own logo (a calendar page with a tick) and its own colours.
+I liked the clean, confident feel of Wallet by BudgetBakers: emerald green, soft mint, big numbers, calm cards. Expenity borrows the mood, not the pixels. Its own logo, its own colours, and eleven other ways to dress it.
 
 ## Try it
 
-Open it, press **Load sample bills** if you want to look around first, and then add one real bill. Ten seconds. If the sentence box misreads something, [tell me the exact sentence](https://github.com/expenity/expenity/issues) and I'll teach it.
+Open it, create an account or choose **Try without an account**, and add one real expense. Ten seconds. If something is confusing, or a sentence is misread, [tell me](https://github.com/expenity/expenity/issues) and I'll fix it.
