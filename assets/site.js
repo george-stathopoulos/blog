@@ -73,22 +73,40 @@
 		if ( 'ResizeObserver' in window ) { new ResizeObserver( setBar ).observe( barBox ); }
 	}
 
-	/* Hero boot text: types in line by line ------------------------------ */
+	/* Hero boot text: typed line by line, like an old machine starting up ------ */
 	var boot = document.querySelector( '[data-boot]' );
-	if ( boot ) {
-		var full = boot.textContent;
-		var booted = false;
-		try { booted = !! window.sessionStorage.getItem( 'gs-booted' ); } catch ( e ) {}
-		if ( ! reduce && ! booted ) {
-			var i = 0;
-			boot.textContent = '';
-			( function type() {
-				boot.textContent = full.slice( 0, i );
-				i += 2;
-				if ( i <= full.length + 1 ) { setTimeout( type, 14 ); }
-			} )();
-			try { window.sessionStorage.setItem( 'gs-booted', '1' ); } catch ( e ) {}
-		}
+	if ( boot && ! reduce ) {
+		var lines = Array.prototype.slice.call( boot.querySelectorAll( '.bl' ) );
+		var WIDTH = 27; // label + dots fill this many characters, then the status
+		lines.forEach( function ( l ) { l.dataset.html = l.innerHTML; l.textContent = ''; } );
+		var wait = function ( ms ) { return new Promise( function ( r ) { setTimeout( r, ms ); } ); };
+		var typeInto = async function ( node, text, speed ) {
+			for ( var i = 1; i <= text.length; i++ ) { node.textContent = text.slice( 0, i ); await wait( speed + Math.random() * 18 ); }
+		};
+		( async function run() {
+			await wait( 350 );
+			for ( var n = 0; n < lines.length; n++ ) {
+				var l = lines[ n ];
+				var text = l.dataset.text.replace( /&gt;/g, '>' );
+				var out = document.createElement( 'span' );
+				l.appendChild( out );
+				await typeInto( out, text, 26 );
+				if ( l.dataset.status ) {
+					var dots = Math.max( 3, WIDTH - text.length );
+					for ( var d = 1; d <= dots; d++ ) { out.textContent = text + ' ' + new Array( d + 1 ).join( '.' ); await wait( 22 ); }
+					await wait( n === lines.length - 2 ? 700 : 260 );
+					var st = document.createElement( 'b' );
+					st.className = l.dataset.err ? 'err' : 'ok';
+					st.textContent = ' ' + l.dataset.status;
+					l.appendChild( st );
+					if ( l.dataset.err ) { await wait( 450 ); }
+				}
+				await wait( 180 );
+			}
+			var caret = document.createElement( 'span' );
+			caret.className = 'caret';
+			boot.lastElementChild.appendChild( caret );
+		} )();
 	}
 
 	/* Hero fades away as you scroll -------------------------------------- */
