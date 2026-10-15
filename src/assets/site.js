@@ -64,6 +64,15 @@
 		} );
 	}
 
+	/* The hero fills the first screen: whatever height the top bar has, the hero takes the rest. */
+	var barBox = document.querySelector( '.bar' );
+	if ( barBox ) {
+		var setBar = function () { root.style.setProperty( '--bar-h', barBox.offsetHeight + 'px' ); };
+		setBar();
+		window.addEventListener( 'resize', setBar );
+		if ( 'ResizeObserver' in window ) { new ResizeObserver( setBar ).observe( barBox ); }
+	}
+
 	/* Hero boot text: types in line by line ------------------------------ */
 	var boot = document.querySelector( '[data-boot]' );
 	if ( boot ) {
