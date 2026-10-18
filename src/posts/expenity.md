@@ -13,7 +13,7 @@ That is the whole origin story. No grand market analysis, no five-year plan. Jus
 
 It started as a bill reminder, which is the most natural thing to build when someone says "what needs paying, and when?". Then "easy" kept moving the goalposts. Easy means fewer taps. Easy means it remembers things. Easy means it does not make you feel bad. Easy means it speaks Greek properly. You can see where this is going.
 
-[Open Expenity](https://expenity.github.io/expenity/app/), or [look around the website](https://expenity.github.io/expenity/). It is free, open source, and works on phones, tablets and computers, in English and Greek.
+[Open Expenity](https://expenity.github.io/expenity/app/), or [look around the website](https://expenity.github.io/expenity/). It is free, open source, and works on iPhone, Android, iPad, Windows, Mac and Linux, in English and Greek, with no app store and nothing to download. (The website has the real app in a phone, tablet and computer frame, so you can try it and change the theme before you commit to anything.)
 
 ## What "easy" turned into
 
