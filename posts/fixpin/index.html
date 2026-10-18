@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FixPin: for everyone who has ever said \&quot;the blue one\&quot; | George Stathopoulos's blog</title>
+<meta name="description" content="A free app and browser extension that let you point at the broken thing instead of describing it. Born as a feature, renamed after an awkward discovery, and powered by a flashlight.">
+<link rel="canonical" href="https://george-stathopoulos.github.io/blog/posts/fixpin/">
+<meta name="theme-color" content="#0b0a08">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FixPin: for everyone who has ever said \&quot;the blue one\&quot; | George Stathopoulos's blog">
+<meta property="og:description" content="A free app and browser extension that let you point at the broken thing instead of describing it. Born as a feature, renamed after an awkward discovery, and powered by a flashlight.">
+<meta property="og:url" content="https://george-stathopoulos.github.io/blog/posts/fixpin/">
+<meta property="og:image" content="https://george-stathopoulos.github.io/blog/assets/social.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/rss+xml" title="George Stathopoulos's blog" href="https://george-stathopoulos.github.io/blog/feed.xml">
+<link rel="icon" href="/blog/assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/blog/assets/fonts/vt323-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/blog/assets/site.css?v=mveecvk5">
+<script>document.documentElement.classList.remove('no-js');try{var t=localStorage.getItem('gs-blog-theme'),f=localStorage.getItem('gs-blog-font');if(t)document.documentElement.dataset.theme=t;if(f)document.documentElement.dataset.font=f}catch(e){}</script>
+<!-- Cloudflare Web Analytics: counts visits anonymously, no cookies --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "64332b427a604e879f82853393ebdb0d"}'></script><!-- End Cloudflare Web Analytics -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"FixPin: for everyone who has ever said \\\"the blue one\\\"","datePublished":"2026-10-19","description":"A free app and browser extension that let you point at the broken thing instead of describing it. Born as a feature, renamed after an awkward discovery, and powered by a flashlight.","author":{"@type":"Person","name":"George Stathopoulos","url":"https://george-stathopoulos.github.io/"},"mainEntityOfPage":"https://george-stathopoulos.github.io/blog/posts/fixpin/"}</script>
+</head>
+<body class="is-post">
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"><i></i></div>
+<header class="bar">
+	<div class="wrap bar-in">
+		<a class="prompt" href="/blog/" aria-label="Blog home"><span class="u">george</span>@<span class="h">blog</span>:<span class="p">~</span>$</a>
+		<nav id="nav" class="nav" aria-label="Main"><a href="/blog/"><span class="cmd">home</span> ~/</a><a href="/blog/posts/" aria-current="page"><span class="cmd">ls</span> posts</a><a href="/blog/projects/"><span class="cmd">cd</span> projects</a><a href="/blog/about/"><span class="cmd">cat</span> about</a><a href="/blog/feed.xml"><span class="cmd">rss</span> feed</a></nav>
+		<div class="bar-tools">
+			<button type="button" class="tool" data-style-toggle aria-expanded="false" aria-controls="style-panel">[style]</button>
+			<button type="button" class="tool menu" data-menu aria-controls="nav" aria-expanded="false">[menu]</button>
+		</div>
+		<div class="style-panel" id="style-panel" hidden>
+			<p class="sp-h">colour</p>
+			<div class="sp-row"><button type="button" class="sp-btn" data-theme-set="amber" aria-pressed="false"><span class="sp-sw" style="--sw:#ffb000"></span>amber</button><button type="button" class="sp-btn" data-theme-set="green" aria-pressed="false"><span class="sp-sw" style="--sw:#33ff66"></span>green</button><button type="button" class="sp-btn" data-theme-set="white" aria-pressed="false"><span class="sp-sw" style="--sw:#f2f2f2"></span>white</button><button type="button" class="sp-btn" data-theme-set="paper" aria-pressed="false"><span class="sp-sw" style="--sw:#f4efe2"></span>paper</button></div>
+			<p class="sp-h">font</p>
+			<div class="sp-row"><button type="button" class="sp-btn" data-font-set="terminal" aria-pressed="false" style="font-family:'VT323', monospace">terminal</button><button type="button" class="sp-btn" data-font-set="plex" aria-pressed="false" style="font-family:'IBM Plex Mono', monospace">plex mono</button><button type="button" class="sp-btn" data-font-set="jetbrains" aria-pressed="false" style="font-family:'JetBrains Mono', monospace">jetbrains</button><button type="button" class="sp-btn" data-font-set="space" aria-pressed="false" style="font-family:'Space Mono', monospace">space mono</button><button type="button" class="sp-btn" data-font-set="system" aria-pressed="false" style="font-family:ui-monospace, Menlo, monospace">system</button></div>
+		</div>
+	</div>
+</header>
+<main id="main">
+<article class="post wrap" data-post-page>
+	<header class="post-head">
+		<p class="crumb" data-type><span class="dim">$</span> cat posts/fixpin.md</p>
+		<h1 class="post-title">FixPin: for everyone who has ever said \&quot;the blue one\&quot;</h1>
+		<p class="post-meta"><time datetime="2026-10-19">19 Oct 2026</time> · 4 min read · <span class="tag">#webapp</span> <span class="tag">#extension</span> <span class="tag">#support</span> <span class="tag">#privacy</span></p>
+		<p class="post-lede">A free app and browser extension that let you point at the broken thing instead of describing it. Born as a feature, renamed after an awkward discovery, and powered by a flashlight.</p>
+	</header>
+	<div class="prose"><p>&quot;Can I use the pointing thing on a site that isn't WordPress?&quot;</p>
+<p>I had just finished explaining Fixpass to someone. I'd talked for ten minutes about safe temporary access, about never emailing a password, about the careful bit I was proud of. And they said: <em>&quot;Yeah, but can I use the pointing thing?&quot;</em></p>
+<p>Ten minutes of careful security engineering, and the review came back: <em>nice button.</em></p>
+<p>I took it personally for about a minute. Then I took it as a brief.</p>
+<h2>Here is the whole problem</h2>
+<p>Someone: &quot;The button doesn't work.&quot;
+Me: &quot;Which button?&quot;
+Someone: &quot;The blue one.&quot;
+Me: &quot;We have eleven blue buttons.&quot;
+Someone: &quot;...The blue one that doesn't work.&quot;</p>
+<p>This conversation has been happening for as long as there have been buttons. It ends either with a screenshot of the wrong page, or with someone saying &quot;can we just jump on a call?&quot;, which is how every adult hobby dies.</p>
+<h2>What FixPin does</h2>
+<p>You point at the broken thing. That's it. That's the product.</p>
+<ul>
+<li><strong>The app</strong> works on any phone, tablet or computer. Drop in a screenshot, click the problem (or drag a box round it), write a note.</li>
+<li><strong>The browser extension</strong> does the screenshot for you, and also brings along the page address, your screen size, your browser and whatever errors the page threw while you weren't looking.</li>
+<li>Then you get <strong>a link</strong>. It's private, it self-destructs in 1, 7 or 30 days, and you can put a passcode on it, like a tiny secret clubhouse for one bug.</li>
+</ul>
+<p><a href="https://fixpin.george-stathopoulos.workers.dev/" rel="noopener">Open the app</a>, or <a href="https://george-stathopoulos.github.io/fixpin/" rel="noopener">wander around the website</a>. Fair warning: the website is dark, and you navigate it with a flashlight. I will not be taking questions about this.</p>
+<h2>The naming incident</h2>
+<p>I wanted to keep &quot;Fix&quot;, because Fixpass taught me I have exactly one good prefix and I intend to wear it out.</p>
+<p>Meeting one produced <strong>FixSpot</strong>. I loved it. I built an app, an extension, a website, a flashlight and half a blog post around it. It had a dog-ish ring to it. It was perfect.</p>
+<p>Then I did what I should have done <em>before</em> the logo: I searched the browser store. Somebody already had an extension with that exact name, doing a similar job. I won't name them. They got there first, and they deserve their peace, and also I'm too embarrassed.</p>
+<p>Meeting two, now held with the knowledge that I am a person who names things first and checks later:</p>
+<ul>
+<li><strong>FixShot</strong> was clear, but it sounds like something a pharmacist gives you.</li>
+<li><strong>FixPoint</strong> already belongs to mathematicians and some very serious finance people. I don't want their lawyers <em>or</em> their calculators.</li>
+<li><strong>FixLens</strong> sounded like it comes with a subscription and a lanyard.</li>
+<li><strong>FixPin</strong> won. You pin the problem to where it actually is. The numbered markers even look like little map pins, which I am going to claim was the plan all along.</li>
+</ul>
+<p>This time I searched first. The whole incident cost one evening, one renamed repository and a commit message I would like everyone to forget.</p>
+<h2>No accounts, on purpose</h2>
+<p>Nothing to sign up for. Nothing to forget. Nothing to leak. Reports live on a small Cloudflare Worker under a link nobody can guess, and they delete themselves when the time is up. The extension sends nothing until you press Send, and only runs on the page you click it on. No analytics, in the app or the extension.</p>
+<p>There is no user table to get hacked, because there are no users. Security through not inviting anyone to the party.</p>
+<h2>The part where I'm honest</h2>
+<p>The extension collects page errors <strong>from the moment you click its button</strong>, not before. Browsers won't let a polite extension peek into the past without asking permission to watch every site you visit, and I didn't want that permission. So the instruction is: click first, <em>then</em> make the bug happen again.</p>
+<p>Yes, this means asking the bug to perform on cue. Bugs are famously shy. Good luck.</p>
+<h2>Using WordPress? Even better</h2>
+<p>Then you can have the whole chain: point at the problem with FixPin (or Spotlight inside <a href="https://george-stathopoulos.github.io/fixpass/" rel="noopener">Fixpass</a>), let support in safely with Fixpass, and if you're the one answering the tickets, <a href="https://george-stathopoulos.github.io/helpdesk-hero/" rel="noopener">Helpdesk Hero</a> hands you the diagnostics so you stop asking &quot;which PHP version?&quot; four times a day.</p>
+<h2>What I learned</h2>
+<p>Some features are homeless before they're finished. Spotlight was a perfectly good idea living in a house too small for it. The fix wasn't a bigger house, it was a front door of its own.</p>
+<p>And: check the name <em>before</em> you build the flashlight.</p>
+<p>If you have ever said &quot;the blue one&quot; to someone with eleven blue buttons, this is for you. I'm only a little judging. (I'm more than a little judging.)</p>
+</div>
+	<p class="eof" aria-hidden="true">-- EOF --</p>
+	<aside class="project-box reveal"><p class="crumb"><span class="dim">$</span> cat project.info</p><h2>FixPin</h2><p>Point at what is broken on any website and share a private link.</p><p class="kind">Web app and browser extension · free</p><p><a class="btn" href="https://george-stathopoulos.github.io/fixpin/">&gt; visit fixpin</a> <a class="btn ghost" href="https://github.com/george-stathopoulos/fixpin">&gt; source</a></p></aside>
+	<nav class="pager" aria-label="More posts">
+		<a href="/blog/posts/expenity/"><small>&lt; older</small><span>Expenity: the money app Olga asked for (and then it got out of hand)</span></a>
+		<a class="next" href="/blog/posts/hello-world/"><small>newer &gt;</small><span>Hello, world. Again.</span></a>
+	</nav>
+	<p class="back"><a href="/blog/posts/">&lt; cd ..</a></p>
+</article>
+</main>
+<footer class="foot">
+	<div class="wrap">
+		<p class="foot-line"><span class="dim">$</span> ls ~/projects</p>
+		<ul class="foot-projects"><li><a href="https://george-stathopoulos.github.io/gatehouse/">Gatehouse</a><span> AI governance and cost control for WordPress</span></li><li><a href="https://george-stathopoulos.github.io/helpdesk-hero/">Helpdesk Hero</a><span> WordPress support with diagnostics and password-free access</span></li><li><a href="https://george-stathopoulos.github.io/fixpass/">Fixpass</a><span> Spotlight the problem and give support safe, temporary access</span></li><li><a href="https://george-stathopoulos.github.io/fixpin/">FixPin</a><span> Point at what is broken on any website and share a private link</span></li><li><a href="https://george-stathopoulos.github.io/sheetpilot/">SheetPilot</a><span> Turn any spreadsheet into an interactive dashboard, in your browser</span></li><li><a href="https://expenity.github.io/expenity/">Expenity</a><span> Know where your money goes. English and Greek</span></li><li><a href="https://github.com/george-stathopoulos/mitos-checklist">Mitos Checklist</a><span> Greek public-service procedures as tick-off checklists</span></li></ul>
+		<p class="foot-meta"><a href="https://george-stathopoulos.github.io/">george-stathopoulos.github.io</a> · <a href="https://github.com/george-stathopoulos/blog">source</a> · no cookies; visits are counted anonymously, with no personal data · made with <span class="heart" aria-label="love">♥</span> in Athens</p>
+	</div>
+</footer>
+<script src="/blog/assets/site.js?v=mveecvk5" defer></script>
+</body>
+</html>
