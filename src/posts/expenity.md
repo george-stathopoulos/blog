@@ -1,52 +1,49 @@
 ---
-title: "Expenity: know where your money goes"
-date: 2026-10-15
+title: "Expenity: the money app Olga asked for (and then it got out of hand)"
+date: 2026-10-18
 order: 80
-summary: A mobile-first money app with passkeys, shared wallets, budgets, savings goals and recurring income. A new guided setup, reusable transaction names, compressed photos and fourteen themes make it your own.
+summary: It began with one request from my wife, Olga: an easy way to track expenses. Twenty-five animated tutorials, a daily "you can spend today" number, a flame for streaks and a pulsing help icon later, here we are.
 tags: webapp, finance, privacy, greek
 project: expenity
 ---
 
-Expenity started with a practical question: what needs paying, and when? It has grown into a place for the rest of the picture too—everyday expenses, income, wallets and the things you are saving towards.
+This app exists because my wife, Olga, wanted an easy way to track expenses.
 
-[Open Expenity](https://expenity.github.io/expenity/app/), or [take a look at the website](https://expenity.github.io/expenity/). It is free, open source, and works on phones, tablets and computers.
+That is the whole origin story. No grand market analysis, no five-year plan. Just one very reasonable sentence, and one word in it that turned out to be dangerous: **easy**.
 
-## Designed around the moment you add something
+It started as a bill reminder, which is the most natural thing to build when someone says "what needs paying, and when?". Then "easy" kept moving the goalposts. Easy means fewer taps. Easy means it remembers things. Easy means it does not make you feel bad. Easy means it speaks Greek properly. You can see where this is going.
 
-Recording an expense should leave room to think. The amount pad now starts closed. Tap the amount, enter it, and use **✓ Done** to put the pad away. Add a description, category and wallet, then save the whole entry when you are ready. Text fields have their own Done control too.
+[Open Expenity](https://expenity.github.io/expenity/app/), or [look around the website](https://expenity.github.io/expenity/). It is free, open source, and works on phones, tablets and computers, in English and Greek.
 
-If you often use the same name, tick **Save this name for next time**. Next time, select it from Saved names. Expenses and income have separate lists; the name and category come back, while you decide the new amount, date and wallet. Saved names travel with your account settings.
+## What "easy" turned into
 
-## A clearer home for each feature
+Here is the honest inventory, because it got a little out of hand:
 
-**Budgets & goals** contains spending limits and savings targets. A small dot draws attention to the section until you open it for the first time. **Recurring income** lives under **Activity → Income**—the place to set up a salary schedule and mark it received. **Ideas** stays on Home and expands there, using arithmetic on your own records to highlight opportunities.
+- **Type it like you would say it.** "Coffee 3.50 yesterday" becomes an expense with a name, an amount and a date. It works in Greek too: "Καφές 3,50 χθες".
+- **Scan a receipt.** Hold the + button, take a photo, and the merchant, total and date are read on your device. Not uploaded for recognition, read on your device. Wrong? Re-scan.
+- **A number for today.** One friendly figure: what you can spend today, worked out from your balance, bills and budgets. Or set your own daily, weekly or monthly target. You can track an income target too.
+- **A flame.** Streaks count the days you stay within budget. It is a small thing, and it is surprisingly hard to ignore.
+- **Budgets, goals, repeating income, reports and a 90-day forecast.** The grown-up bits, with rings and bars that fill up as you go.
+- **Swipe, or press and hold.** A swipe never pays or deletes anything by itself, it only reveals buttons. (It used to be more eager. That did not go well.)
+- **Little safety nets.** A duplicate guard that asks before you add the same entry twice. A note when a bill quietly got more expensive. Drafts, so a flat battery does not eat your half-typed expense. A recently deleted list that keeps things for 30 days.
+- **Shared wallets, photos, 18 themes with a pencil, a profile picture** you choose from 20 characters, and a few more things I will stop listing before this becomes a menu.
 
-Reports connect these pieces: spending categories, cash flow, trends, subscriptions, tables, filters and a 90-day forecast. Forecasts are estimates based on recorded and scheduled activity, rather than a promise about the future.
+## Show, do not tell
 
-## An introduction that actually introduces the app
+Documentation is lovely, and nobody reads it while they are standing in a shop. So every feature has a short **animated tutorial** built into the app. There are twenty-five of them, and they are pure CSS, no video, so they are tiny and they match your theme.
 
-The first screen offers an account using a passkey, or a quiet option to try without one. After signing up, an animated install guide explains how to add Expenity to your home screen. Optional setup covers your name, currency, aims, goals, wallets and theme. EUR is the starting currency.
+On top of that there is a **help icon**. It sits at the top of a screen, pulses, and rings like a bell every few seconds, because a quiet help button is a button nobody finds. Tap it and a popup explains the screen you are on. You never lose your place: if you were halfway through an expense, it is still there when you close it. Know a screen well already? Tell it to never show that icon again. It will take the hint.
 
-Floating balance cards, soft blur and transitions lead into a short tour of Home, Activity, Budgets & goals and Reports. On phones, a separate demonstration explains swipe actions. Nothing is paid or deleted just by swiping. Existing accounts that have completed setup return to their data when they sign in again.
+## As much app as you want
 
-English and Greek each have their own interface labels and guides. Built-in wallet names follow the language you choose. Names you write yourself remain as written.
+Packed is not the same as cluttered. The first-run setup asks how much you want to see: **Basic** for wallets, expenses, income, bills and reports; **Pro** for repeating bills, budgets, goals, tags, photos and sharing; **Advanced** for everything, including receipt scanning and streaks. Or build your own mix with a toggle for each feature. Switching never deletes anything. Hidden features come back exactly as you left them.
 
-## Small photos, useful context
+## Honest about the data
 
-Attach a reference photo to an expense, income, bill, wallet, budget or goal. Expenity re-encodes it before upload, removes original metadata, limits the longest side to 1,280 pixels and compresses it to 96 KB or less. A paperclip opens the image when you need it.
+Passkeys replace passwords. With an account, your records sync through Cloudflare Workers and D1 over an encrypted connection. It is not end-to-end encrypted, like most online services, and I would rather tell you than let you assume. Without an account, everything stays in your browser. No bank connection is required, and Expenity never moves money. Financial records work offline. Photos need a connection.
 
-Photos require an account and internet. Shared-wallet permissions apply to them. **Account → Delete all photos** removes your uploads, including your contributions in shared wallets, while retaining financial records and other people's uploads. You confirm with a fresh passkey check. JSON backups hold photo references, so keep originals if you need an independent image archive.
+## Tell me what is missing
 
-## Make it look like yours
+There is a **Contact us** form inside the app, with formatting and photos, for feedback or a problem report. You do not need an account to use it. And if you want the long version, the [English guide](https://expenity.github.io/expenity/docs/) and the [Greek guide](https://expenity.github.io/expenity/el/docs/) cover everything, with the same animations. The [source is on GitHub](https://github.com/expenity/expenity).
 
-There are fourteen themes, including paper notes, minimal, Synthwave, amber neon and cyan neon, plus a custom editor for colours, typography and corners. The neon themes have subtle falling trails. Motion follows your device preference, with Full, Reduced and Off choices. The redesigned website has its own interactive colour preview and a pause-effects control.
-
-## Your account, clearly explained
-
-Passkeys replace passwords. Recovery codes and extra passkeys help you regain access. With an account, records sync through Cloudflare Workers and D1 over an encrypted connection; the service is not end-to-end encrypted. Without an account, financial records remain in that browser. No bank connection is required, and Expenity does not move money.
-
-Financial records work offline. Photos need a connection. Push reminders can arrive while the app is closed at your chosen daily hour; on iPhone, install the Home Screen app first. Email reminders remain unavailable until a sending service is configured.
-
-## Try it
-
-[Open the app](https://expenity.github.io/expenity/app/) and add your first expense. The [full English guide](https://expenity.github.io/expenity/docs/) and [Greek guide](https://expenity.github.io/expenity/el/docs/) cover setup, saved names, wallets, budgets, income, reports, photos and recovery. The [source is on GitHub](https://github.com/expenity/expenity); if something is confusing, [report it here](https://github.com/expenity/expenity/issues).
+Olga, if you are reading this: I hope it is easy enough.
