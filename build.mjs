@@ -187,6 +187,7 @@ ${ body }
 	</div>
 </footer>
 <script src="${ SITE.base }assets/site.js?v=${ ASSET_V }" defer></script>
+<script src="${ SITE.base }assets/share-heart.js?v=${ ASSET_V }" data-site="blog" data-url="${ SITE.url }" data-msg="Liked a post? Tell someone. It costs nothing but a tap." defer></script>
 </body>
 </html>
 `;
@@ -196,6 +197,22 @@ ${ body }
 
 // Pinned posts stay on top, marked with a pin.
 const PIN = '<span class="pin" title="Pinned"><svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M9.8 1.2 14.8 6.2 13.6 7.4 12.9 6.7 10.2 9.4 10.9 12.2 9.8 13.3 6.9 10.4 3.1 14.2 1.8 12.9 5.6 9.1 2.7 6.2 3.8 5.1 6.6 5.8 9.3 3.1 8.6 2.4z"/></svg><span class="pin-t">pinned</span></span>';
+
+// "Pass it on.": the animated share block under each post, with a twist drawn from the post's topic.
+const PASS = {
+	_: { anim: 'wave', msg: 'Hello, you. Pass it on?' },
+	expenity: { anim: 'coins', msg: 'I tracked my money without crying. Ask me how.' },
+	fixpass: { anim: 'lock', msg: 'Locked in. Your turn to point at the problem.' },
+	fixpin: { anim: 'pin', msg: 'Pinned it. Now go tell someone.' },
+	gatehouse: { anim: 'bridge', msg: 'The gate is open. Come on in.' },
+	'hello-world': { anim: 'wave', msg: 'Hello, you. Pass it on?' },
+	'helpdesk-hero': { anim: 'cape', msg: 'Every team needs a hero. Send them this one.' },
+	'mission-control': { anim: 'radar', msg: 'Houston, we have a post worth sharing.' },
+	'mitos-checklist': { anim: 'checks', msg: 'Checked every box. This one is the last: share it.' },
+	'rucss-chaos': { anim: 'shuffle', msg: 'Chaos tamed. Send a little order to a friend.' },
+	sheetpilot: { anim: 'grid', msg: 'Spreadsheets deserve a pilot. Buckle in a friend.' },
+	'wp-rocket-support-health': { anim: 'rocket', msg: 'Ready for liftoff? Launch this to a friend.' },
+};
 
 function postRow( p, i ) {
 	const tags = p.tags.slice( 0, 2 ).map( ( t ) => `<span class="tag">#${ esc( t ) }</span>` ).join( ' ' );
@@ -295,6 +312,7 @@ posts.forEach( ( p, i ) => {
 		<p class="post-lede">${ esc( p.summary ) }</p>
 	</header>
 	<div class="prose">${ p.html }</div>
+	<script src="${ SITE.base }assets/share-heart.js?v=${ ASSET_V }" data-mode="post" data-site="blog" data-post="${ p.slug }" data-anim="${ ( PASS[ p.slug ] || PASS._ ).anim }" data-msg="${ esc( ( PASS[ p.slug ] || PASS._ ).msg ) }" data-title="Pass it on." data-btn="Share this post" defer></script>
 	<p class="eof" aria-hidden="true">-- EOF --</p>
 	${ project }
 	<nav class="pager" aria-label="More posts">
