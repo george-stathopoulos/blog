@@ -154,7 +154,7 @@ ${ noindex ? '<meta name="robots" content="noindex">\n' : '' }<meta name="theme-
 <link rel="icon" href="${ SITE.base }assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="${ SITE.base }assets/fonts/vt323-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="${ SITE.base }assets/site.css?v=${ ASSET_V }">
-<script>document.documentElement.classList.remove('no-js');try{var t=localStorage.getItem('gs-blog-theme'),f=localStorage.getItem('gs-blog-font');if(t)document.documentElement.dataset.theme=t;if(f)document.documentElement.dataset.font=f}catch(e){}</script>
+<script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');try{var t=localStorage.getItem('gs-blog-theme'),f=localStorage.getItem('gs-blog-font');if(t)document.documentElement.dataset.theme=t;if(f)document.documentElement.dataset.font=f}catch(e){}</script>
 <!-- Cloudflare Web Analytics: counts visits anonymously, no cookies --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "64332b427a604e879f82853393ebdb0d"}'></script><!-- End Cloudflare Web Analytics -->
 ${ jsonLd }</head>
 <body class="${ bodyClass }">
