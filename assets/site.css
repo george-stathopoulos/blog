@@ -333,3 +333,6 @@ a:focus-visible, button:focus-visible { outline: 2px dashed var(--fg); outline-o
 :root[data-theme="paper"] .p-stage { filter: invert(1); mix-blend-mode: multiply; }
 :root[data-theme="paper"] .p-stage::after { background: #fff; }
 :root[data-theme="paper"] .p-stage::before { display: none; }
+
+/* No flash on load: the hero's boot text is typed by script, so it stays hidden until the script starts typing (the "js" class is set in the head, before the first paint). */
+@media (prefers-reduced-motion: no-preference) { .js .boot:not(.on) .bl { visibility: hidden; } }

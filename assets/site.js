@@ -79,6 +79,7 @@
 		var lines = Array.prototype.slice.call( boot.querySelectorAll( '.bl' ) );
 		var WIDTH = 27; // label + dots fill this many characters, then the status
 		lines.forEach( function ( l ) { l.dataset.html = l.innerHTML; l.textContent = ''; } );
+		boot.classList.add( 'on' );
 		var wait = function ( ms ) { return new Promise( function ( r ) { setTimeout( r, ms ); } ); };
 		var typeInto = async function ( node, text, speed ) {
 			for ( var i = 1; i <= text.length; i++ ) { node.textContent = text.slice( 0, i ); await wait( speed + Math.random() * 20 ); }
