@@ -26,6 +26,7 @@ Here is the honest inventory, because it got a little out of hand:
 - **Budgets, goals, repeating income, reports and a 90-day forecast.** The grown-up bits, with rings and bars that fill up as you go.
 - **Swipe, or press and hold.** A swipe never pays or deletes anything by itself, it only reveals buttons. (It used to be more eager. That did not go well.)
 - **Little safety nets.** A duplicate guard that asks before you add the same entry twice. A note when a bill quietly got more expensive. Drafts, so a flat battery does not eat your half-typed expense. A recently deleted list that keeps things for 30 days.
+- **A robot that answers “can I afford it?”** It is called eFriend, it chats, it knows your name and it finds the best day to buy things. It got its own post: [eFriend: the robot my money app did not ask for](https://george-stathopoulos.github.io/blog/posts/expenity-efriend/).
 - **Shared wallets, photos, 18 themes with a pencil, a profile picture** you choose from 20 characters, and a few more things I will stop listing before this becomes a menu.
 
 ## Show, do not tell
