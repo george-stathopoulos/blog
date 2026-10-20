@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>eFriend: the 80s bot that does your money maths (no AI, no cloud, just disco) | George Stathopoulos's blog</title>
+<meta name="description" content="A retro robot lives inside my money app. He is rule-based, a bit shy, loves disco and Star Wars, and tells you if you can afford the thing. You can chat with him right here, at the top of this post.">
+<link rel="canonical" href="https://george-stathopoulos.github.io/blog/posts/expenity-efriend/">
+<meta name="theme-color" content="#0b0a08">
+<meta property="og:type" content="article">
+<meta property="og:title" content="eFriend: the 80s bot that does your money maths (no AI, no cloud, just disco) | George Stathopoulos's blog">
+<meta property="og:description" content="A retro robot lives inside my money app. He is rule-based, a bit shy, loves disco and Star Wars, and tells you if you can afford the thing. You can chat with him right here, at the top of this post.">
+<meta property="og:url" content="https://george-stathopoulos.github.io/blog/posts/expenity-efriend/">
+<meta property="og:image" content="https://george-stathopoulos.github.io/blog/assets/social.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/rss+xml" title="George Stathopoulos's blog" href="https://george-stathopoulos.github.io/blog/feed.xml">
+<link rel="icon" href="/blog/assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/blog/assets/fonts/vt323-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/blog/assets/site.css?v=mvh5aj9x">
+<script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');try{var t=localStorage.getItem('gs-blog-theme'),f=localStorage.getItem('gs-blog-font');if(t)document.documentElement.dataset.theme=t;if(f)document.documentElement.dataset.font=f}catch(e){}</script>
+<!-- Cloudflare Web Analytics: counts visits anonymously, no cookies --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "64332b427a604e879f82853393ebdb0d"}'></script><!-- End Cloudflare Web Analytics -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"eFriend: the 80s bot that does your money maths (no AI, no cloud, just disco)","datePublished":"2026-10-20","description":"A retro robot lives inside my money app. He is rule-based, a bit shy, loves disco and Star Wars, and tells you if you can afford the thing. You can chat with him right here, at the top of this post.","author":{"@type":"Person","name":"George Stathopoulos","url":"https://george-stathopoulos.github.io/"},"mainEntityOfPage":"https://george-stathopoulos.github.io/blog/posts/expenity-efriend/"}</script>
+</head>
+<body class="is-post">
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"><i></i></div>
+<header class="bar">
+	<div class="wrap bar-in">
+		<a class="prompt" href="/blog/" aria-label="Blog home"><span class="u">george</span>@<span class="h">blog</span>:<span class="p">~</span>$</a>
+		<nav id="nav" class="nav" aria-label="Main"><a href="/blog/"><span class="cmd">home</span> ~/</a><a href="/blog/posts/" aria-current="page"><span class="cmd">ls</span> posts</a><a href="/blog/projects/"><span class="cmd">cd</span> projects</a><a href="/blog/about/"><span class="cmd">cat</span> about</a><a href="/blog/feed.xml"><span class="cmd">rss</span> feed</a></nav>
+		<div class="bar-tools">
+			<button type="button" class="tool" data-style-toggle aria-expanded="false" aria-controls="style-panel">[style]</button>
+			<button type="button" class="tool menu" data-menu aria-controls="nav" aria-expanded="false">[menu]</button>
+		</div>
+		<div class="style-panel" id="style-panel" hidden>
+			<p class="sp-h">colour</p>
+			<div class="sp-row"><button type="button" class="sp-btn" data-theme-set="amber" aria-pressed="false"><span class="sp-sw" style="--sw:#ffb000"></span>amber</button><button type="button" class="sp-btn" data-theme-set="green" aria-pressed="false"><span class="sp-sw" style="--sw:#33ff66"></span>green</button><button type="button" class="sp-btn" data-theme-set="white" aria-pressed="false"><span class="sp-sw" style="--sw:#f2f2f2"></span>white</button><button type="button" class="sp-btn" data-theme-set="paper" aria-pressed="false"><span class="sp-sw" style="--sw:#f4efe2"></span>paper</button></div>
+			<p class="sp-h">font</p>
+			<div class="sp-row"><button type="button" class="sp-btn" data-font-set="terminal" aria-pressed="false" style="font-family:'VT323', monospace">terminal</button><button type="button" class="sp-btn" data-font-set="plex" aria-pressed="false" style="font-family:'IBM Plex Mono', monospace">plex mono</button><button type="button" class="sp-btn" data-font-set="jetbrains" aria-pressed="false" style="font-family:'JetBrains Mono', monospace">jetbrains</button><button type="button" class="sp-btn" data-font-set="space" aria-pressed="false" style="font-family:'Space Mono', monospace">space mono</button><button type="button" class="sp-btn" data-font-set="system" aria-pressed="false" style="font-family:ui-monospace, Menlo, monospace">system</button></div>
+		</div>
+	</div>
+</header>
+<main id="main">
+<article class="post wrap" data-post-page>
+	<header class="post-head">
+		<p class="crumb" data-type><span class="dim">$</span> cat posts/expenity-efriend.md</p>
+		<h1 class="post-title">eFriend: the 80s bot that does your money maths (no AI, no cloud, just disco)</h1>
+		<p class="post-meta"><time datetime="2026-10-20">20 Oct 2026</time> · 5 min read · <span class="tag">#webapp</span> <span class="tag">#finance</span> <span class="tag">#privacy</span> <span class="tag">#chat</span> <span class="tag">#greek</span></p>
+		<p class="post-lede">A retro robot lives inside my money app. He is rule-based, a bit shy, loves disco and Star Wars, and tells you if you can afford the thing. You can chat with him right here, at the top of this post.</p>
+	</header>
+	<div class="prose"><style>
+.ef-arcade{border:2px solid var(--fg);border-radius:10px;padding:14px;margin:0 0 28px;background:var(--bg2);box-shadow:0 0 24px rgba(255,176,0,.18)}
+.ef-arcade h2{margin:0 0 4px;font-size:1.05rem;letter-spacing:.12em;text-transform:uppercase}
+.ef-arcade p{margin:0 0 12px;color:var(--dim)}
+.ef-screen{position:relative;width:min(390px,100%);height:min(640px,78vh);margin:0 auto 12px;border:8px solid #000;border-radius:26px;background:#000;overflow:hidden;display:grid;place-items:center;box-shadow:0 0 0 2px var(--fg)}
+.ef-screen iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#fffaf6}
+.ef-coin{font:inherit;color:var(--bg);background:var(--fg);border:0;border-radius:6px;padding:12px 18px;cursor:pointer;letter-spacing:.1em;text-transform:uppercase;animation:efblink 1.2s steps(2) infinite}
+.ef-coin:hover{filter:brightness(1.15)}
+.ef-arcade .row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.ef-arcade button.alt{font:inherit;color:var(--fg);background:transparent;border:1px solid var(--fg);border-radius:6px;padding:8px 12px;cursor:pointer}
+@keyframes efblink{50%{opacity:.55}}
+</style>
+<div class="ef-arcade" id="arcade">
+<h2>&gt; Insert coin: talk to eFriend</h2>
+<p>This is the real chat from the app, with a made-up household called Maria. Nothing is saved. Try: <b>a new watch for my girlfriend, 450, in 2 weeks</b>. Or ask him how old he is.</p>
+<div class="ef-screen" id="ef-screen" data-src="https://expenity.github.io/expenity/app/?demo=1&amp;ask=1&amp;lang=en"><button type="button" class="ef-coin" id="ef-coin">▶ Insert coin</button></div>
+<div class="row"><button type="button" class="alt" id="ef-restart">↻ Restart</button><a href="https://expenity.github.io/expenity/efriend/">Meet him properly</a><a href="https://expenity.github.io/expenity/el/efriend/">Στα ελληνικά</a></div>
+</div>
+<script>
+(function(){var s=document.getElementById('ef-screen'),c=document.getElementById('ef-coin'),r=document.getElementById('ef-restart');if(!s||!c)return;
+function load(){s.innerHTML='';var f=document.createElement('iframe');f.src=s.dataset.src;f.title='eFriend chat, live';f.setAttribute('allow','');s.appendChild(f);}
+c.addEventListener('click',load);r.addEventListener('click',load);})();
+</script>
+<p>Everybody is putting an AI chatbot in everything. I put a <strong>bot</strong> in my money app.</p>
+<p>A real one. 1984 vintage (his CV says so). <strong>Rule-based, hand-wound and proudly retro.</strong> No cloud brain, no &quot;as a large language model&quot;. Just clear rules, a calculator, and a deep love of the 80s. His name is <strong>eFriend</strong>, the &quot;e&quot; is for electronic (and maybe a bit for eighties), and he does one job: he looks at your money and tells you, kindly, <strong>can you afford it, and when</strong>.</p>
+<p>It is part of Expenity, the free app that started because my wife Olga wanted an easy way to track expenses. It then got out of hand. This is the out-of-hand part with a disco ball.</p>
+<h2>Chat with him (the real thing)</h2>
+<p>Scroll up, put the coin in. He interviews you like a friend would:</p>
+<ul>
+<li>🛍️ <strong>What</strong> do you want to buy? <strong>How much</strong> is it? <strong>How soon</strong> do you need it?</li>
+<li>🧠 Say it all at once: &quot;I want to buy a new watch for my girlfriend, 450, tomorrow&quot;. He finds the <strong>watch</strong>, the <strong>girlfriend</strong>, the <strong>price</strong> and the <strong>date</strong> (tomorrow, by Friday, on 15 November, before Christmas, in two weeks…). He only asks what is missing.</li>
+<li>✏️ He says it back and you can fix him in plain words: &quot;no, it is 1250&quot;.</li>
+<li>⌨️ Asking for a price? The keyboard goes numeric and the number is grouped as you type, like 2.500.</li>
+<li>🕐 He &quot;types&quot; like a person, then brings you <strong>back to the app</strong> with the answer.</li>
+<li>👋 If you gave Expenity your name, he uses it. He has <strong>dozens of lines</strong> in English and Greek and tries not to repeat himself.</li>
+<li>📝 Going round in circles? He offers a <strong>quick form</strong> (what, how much, when). There is also an icon at the top to skip the chat any time.</li>
+<li>🧹 Lost the thread? <strong>Start over</strong> wipes the chat and he jokes about it. 🕘 <strong>Past chats</strong> are kept on your device, so you can reopen them and ask again.</li>
+<li>⏱️ A chat lasts five minutes. After that, or if you close the app mid-chat, he falls asleep: &quot;zzz&quot;. Wake him up for a fresh one.</li>
+<li>✨ The sparkle in the text box brings back <strong>24 ideas</strong> and <strong>23 questions</strong> to ask him.</li>
+</ul>
+<h2>The answer</h2>
+<ul>
+<li>✅ <strong>Today:</strong> can you buy it now, and how low would your money go afterwards?</li>
+<li>📅 <strong>Best days:</strong> a calendar, <strong>one month at a time</strong>, opened on the best day, with arrows. Paydays 💶 and bills 🧾 are marked, and every day is coloured from <strong>Best</strong> to <strong>Avoid</strong>.</li>
+<li>📈 <strong>A graph</strong> of your balance with and without the purchase, with your safety cushion as a dotted line.</li>
+<li>🎯 <strong>Make it a plan</strong> is at the top, already filled in.</li>
+<li>🚫 <strong>No safe day in the next four months?</strong> No date at all. He explains why and what would help. He will never point at a red day and say &quot;how about this one?&quot;.</li>
+</ul>
+<h2>Where the maths comes from</h2>
+<ul>
+<li><strong>Plans, not goals:</strong> he checks plans against your wallets, income dates, bills, real spending, limits and your other plans. Verdicts: <strong>Comfortable</strong>, <strong>On track</strong>, <strong>Tight</strong>, <strong>At risk</strong>, <strong>Unlikely</strong>.</li>
+<li><strong>Honest about deficits:</strong> if you spend more than you earn, he says so instead of smiling.</li>
+<li><strong>Priorities and cushion:</strong> drag your plans into order, or let him suggest <strong>only the order</strong>, or <strong>the order and the safety cushion</strong>, and watch him move things around. If your income swings a lot, he suggests a bigger cushion and shows why.</li>
+<li><strong>Fills things in for you:</strong> spending limits suggested from your real spending, <strong>budget ideas</strong> after about six weeks, and a note before you save an expense that breaks your own limit.</li>
+<li><strong>Warns you early:</strong> if your money is likely to run short in the next two months, Home names the day, lists the payments before it and gives you a <strong>Move</strong> button.</li>
+<li><strong>Moves money (on paper):</strong> Suggest, Ask first or Automatic. Nothing real ever moves, it is a tracking system.</li>
+<li><strong>Everything stays on your device.</strong> No server does his maths.</li>
+</ul>
+<h2>His story</h2>
+<p>He grew up between a cassette player that ate tapes and a calculator with real buttons. He watched the same space adventure every Saturday, practises disco at night (three moves, in the dark, he is a little shy), and his favourite number is <strong>010001100</strong>. Ask him &quot;tell me about yourself&quot; and he tells the whole thing. I wrote it for him. He insists it is all true.</p>
+<p>Ask him something he does not know and you get the official answer: <strong>&quot;I ask the questions around here.&quot;</strong> It is not AI, it is a lifestyle.</p>
+<h2>Go on</h2>
+<ul>
+<li>🎮 <a href="https://expenity.github.io/expenity/efriend/" rel="noopener">Meet eFriend, with the live chat</a></li>
+<li>📖 <a href="https://expenity.github.io/expenity/docs/efriend/" rel="noopener">The eFriend guide</a></li>
+<li>🆕 <a href="https://expenity.github.io/expenity/changelog/" rel="noopener">What is new</a></li>
+<li>📱 <a href="https://expenity.github.io/expenity/app/" rel="noopener">Open Expenity</a></li>
+</ul>
+<p>May the Force be with your budget.</p>
+</div>
+	<script src="/blog/assets/share-heart.js?v=mvh5aj9x" data-mode="post" data-site="blog" data-post="expenity-efriend" data-anim="wave" data-msg="Hello, you. Pass it on?" data-title="Pass it on." data-btn="Share this post" defer></script>
+	<p class="eof" aria-hidden="true">-- EOF --</p>
+	<aside class="project-box reveal"><p class="crumb"><span class="dim">$</span> cat project.info</p><h2>Expenity</h2><p>Know where your money goes. English and Greek.</p><p class="kind">Web app · free</p><p><a class="btn" href="https://expenity.github.io/expenity/">&gt; visit expenity</a> <a class="btn ghost" href="https://github.com/expenity/expenity">&gt; source</a></p></aside>
+	<nav class="pager" aria-label="More posts">
+		<a href="/blog/posts/fixpin/"><small>&lt; older</small><span>FixPin: for everyone who has ever said \&quot;the blue one\&quot;</span></a>
+		<a class="next" href="/blog/posts/hello-world/"><small>newer &gt;</small><span>Hello, world. Again.</span></a>
+	</nav>
+	<p class="back"><a href="/blog/posts/">&lt; cd ..</a></p>
+</article>
+</main>
+<footer class="foot">
+	<div class="wrap">
+		<p class="foot-line"><span class="dim">$</span> ls ~/projects</p>
+		<ul class="foot-projects"><li><a href="https://george-stathopoulos.github.io/gatehouse/">Gatehouse</a><span> AI governance and cost control for WordPress</span></li><li><a href="https://george-stathopoulos.github.io/helpdesk-hero/">Helpdesk Hero</a><span> WordPress support with diagnostics and password-free access</span></li><li><a href="https://george-stathopoulos.github.io/fixpass/">Fixpass</a><span> Spotlight the problem and give support safe, temporary access</span></li><li><a href="https://george-stathopoulos.github.io/fixpin/">FixPin</a><span> Point at what is broken on any website and share a private link</span></li><li><a href="https://george-stathopoulos.github.io/sheetpilot/">SheetPilot</a><span> Turn any spreadsheet into an interactive dashboard, in your browser</span></li><li><a href="https://expenity.github.io/expenity/">Expenity</a><span> Know where your money goes. English and Greek</span></li><li><a href="https://github.com/george-stathopoulos/mitos-checklist">Mitos Checklist</a><span> Greek public-service procedures as tick-off checklists</span></li></ul>
+		<p class="foot-meta"><a href="https://george-stathopoulos.github.io/">george-stathopoulos.github.io</a> · <a href="https://github.com/george-stathopoulos/blog">source</a> · no cookies; visits are counted anonymously, with no personal data · made with <span class="heart" aria-label="love">♥</span> in Athens</p>
+	</div>
+</footer>
+<script src="/blog/assets/site.js?v=mvh5aj9x" defer></script>
+<script src="/blog/assets/share-heart.js?v=mvh5aj9x" data-site="blog" data-url="https://george-stathopoulos.github.io/blog/" data-msg="Liked a post? Tell someone. It costs nothing but a tap." defer></script>
+</body>
+</html>
