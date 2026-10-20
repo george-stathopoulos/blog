@@ -16,7 +16,7 @@
 <link rel="alternate" type="application/rss+xml" title="George Stathopoulos's blog" href="https://george-stathopoulos.github.io/blog/feed.xml">
 <link rel="icon" href="/blog/assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/blog/assets/fonts/vt323-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/blog/assets/site.css?v=mvh5ijmz">
+<link rel="stylesheet" href="/blog/assets/site.css?v=mvh600jt">
 <script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');try{var t=localStorage.getItem('gs-blog-theme'),f=localStorage.getItem('gs-blog-font');if(t)document.documentElement.dataset.theme=t;if(f)document.documentElement.dataset.font=f}catch(e){}</script>
 <!-- Cloudflare Web Analytics: counts visits anonymously, no cookies --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "64332b427a604e879f82853393ebdb0d"}'></script><!-- End Cloudflare Web Analytics -->
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"eFriend: the 80s bot that does your money maths (no AI, no cloud, just disco)","datePublished":"2026-10-20","description":"A retro robot lives inside my money app. He is rule-based, a bit shy, loves disco and Star Wars, and tells you if you can afford the thing. You can chat with him right here, at the top of this post.","author":{"@type":"Person","name":"George Stathopoulos","url":"https://george-stathopoulos.github.io/"},"mainEntityOfPage":"https://george-stathopoulos.github.io/blog/posts/expenity-efriend/"}</script>
@@ -63,14 +63,18 @@
 </style>
 <div class="ef-arcade" id="arcade">
 <h2>&gt; Insert coin: talk to eFriend</h2>
-<p>This is the real chat from the app, with a made-up household called Maria. Nothing is saved. Try: <b>a new watch for my girlfriend, 450, in 2 weeks</b>. Or ask him how old he is.</p>
+<p>This is the real chat from the app, with a made-up household called Danae. Nothing is saved. Try: <b>a new watch for my girlfriend, 450, in 2 weeks</b>. Or ask him how old he is.</p>
 <div class="ef-screen" id="ef-screen" data-src="https://expenity.github.io/expenity/app/?demo=1&amp;ask=1&amp;lang=en"><button type="button" class="ef-coin" id="ef-coin">▶ Insert coin</button></div>
 <div class="row"><button type="button" class="alt" id="ef-restart">↻ Restart</button><a href="https://expenity.github.io/expenity/efriend/">Meet him properly</a><a href="https://expenity.github.io/expenity/el/efriend/">Στα ελληνικά</a></div>
 </div>
 <script>
 (function(){var s=document.getElementById('ef-screen'),c=document.getElementById('ef-coin'),r=document.getElementById('ef-restart');if(!s||!c)return;
-function load(){s.innerHTML='';var f=document.createElement('iframe');f.src=s.dataset.src;f.title='eFriend chat, live';f.setAttribute('allow','');s.appendChild(f);}
-c.addEventListener('click',load);r.addEventListener('click',load);})();
+var base=s.dataset.src;
+function mk(src){var f=document.createElement('iframe');f.src=src;f.title='eFriend chat, live';f.setAttribute('allow','');return f;}
+function preload(){if(s.querySelector('iframe'))return;var f=mk(base.replace('ask=1','ask=wait'));f.style.visibility='hidden';s.appendChild(f);}
+function play(){var f=s.querySelector('iframe');if(!f){preload();f=s.querySelector('iframe');}c.style.display='none';f.style.visibility='visible';try{f.contentWindow.postMessage('ef-open','*');}catch(e){}}
+function restart(){var f=s.querySelector('iframe');if(f)f.remove();c.style.display='none';s.appendChild(mk(base));}
+c.addEventListener('click',play);r.addEventListener('click',restart);preload();})();
 </script>
 <p>Everybody is putting an AI chatbot in everything. I put a <strong>bot</strong> in my money app.</p>
 <p>A real one. 1984 vintage (his CV says so). <strong>Rule-based, hand-wound and proudly retro.</strong> No cloud brain, no &quot;as a large language model&quot;. Just clear rules, a calculator, and a deep love of the 80s. His name is <strong>eFriend</strong>, the &quot;e&quot; is for electronic (and maybe a bit for eighties), and he does one job: he looks at your money and tells you, kindly, <strong>can you afford it, and when</strong>.</p>
@@ -119,7 +123,7 @@ c.addEventListener('click',load);r.addEventListener('click',load);})();
 </ul>
 <p>May the Force be with your budget.</p>
 </div>
-	<script src="/blog/assets/share-heart.js?v=mvh5ijmz" data-mode="post" data-site="blog" data-post="expenity-efriend" data-anim="wave" data-msg="Hello, you. Pass it on?" data-title="Pass it on." data-btn="Share this post" defer></script>
+	<script src="/blog/assets/share-heart.js?v=mvh600jt" data-mode="post" data-site="blog" data-post="expenity-efriend" data-anim="wave" data-msg="Hello, you. Pass it on?" data-title="Pass it on." data-btn="Share this post" defer></script>
 	<p class="eof" aria-hidden="true">-- EOF --</p>
 	<aside class="project-box reveal"><p class="crumb"><span class="dim">$</span> cat project.info</p><h2>Expenity</h2><p>Know where your money goes. English and Greek.</p><p class="kind">Web app · free</p><p><a class="btn" href="https://expenity.github.io/expenity/">&gt; visit expenity</a> <a class="btn ghost" href="https://github.com/expenity/expenity">&gt; source</a></p></aside>
 	<nav class="pager" aria-label="More posts">
@@ -136,7 +140,7 @@ c.addEventListener('click',load);r.addEventListener('click',load);})();
 		<p class="foot-meta"><a href="https://george-stathopoulos.github.io/">george-stathopoulos.github.io</a> · <a href="https://github.com/george-stathopoulos/blog">source</a> · no cookies; visits are counted anonymously, with no personal data · made with <span class="heart" aria-label="love">♥</span> in Athens</p>
 	</div>
 </footer>
-<script src="/blog/assets/site.js?v=mvh5ijmz" defer></script>
-<script src="/blog/assets/share-heart.js?v=mvh5ijmz" data-site="blog" data-url="https://george-stathopoulos.github.io/blog/" data-msg="Liked a post? Tell someone. It costs nothing but a tap." defer></script>
+<script src="/blog/assets/site.js?v=mvh600jt" defer></script>
+<script src="/blog/assets/share-heart.js?v=mvh600jt" data-site="blog" data-url="https://george-stathopoulos.github.io/blog/" data-msg="Liked a post? Tell someone. It costs nothing but a tap." defer></script>
 </body>
 </html>
