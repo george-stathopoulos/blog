@@ -15,8 +15,9 @@ project: expenity
 .ef-screen iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#fffaf6}
 .ef-coin{font:inherit;color:var(--bg);background:var(--fg);border:0;border-radius:6px;padding:12px 18px;cursor:pointer;letter-spacing:.1em;text-transform:uppercase;animation:efblink 1.2s steps(2) infinite}
 .ef-coin:hover{filter:brightness(1.15)}
-.ef-arcade .row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-.ef-arcade button.alt{font:inherit;color:var(--fg);background:transparent;border:1px solid var(--fg);border-radius:6px;padding:8px 12px;cursor:pointer}
+.ef-arcade .row{display:flex;flex-direction:column;gap:8px;width:min(390px,100%);margin:0 auto}
+.ef-arcade .row>*{display:block;box-sizing:border-box;width:100%;margin:0;font:inherit;font-size:.85rem;line-height:1.2;text-align:center;color:var(--fg);background:transparent;border:1px solid var(--fg);border-radius:6px;padding:7px 10px;cursor:pointer;text-decoration:none}
+.ef-arcade .row>*:hover{background:var(--fg);color:var(--bg)}
 @keyframes efblink{50%{opacity:.55}}
 </style>
 
