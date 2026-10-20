@@ -23,14 +23,18 @@ project: expenity
 
 <div class="ef-arcade" id="arcade">
 <h2>&gt; Insert coin: talk to eFriend</h2>
-<p>This is the real chat from the app, with a made-up household called Maria. Nothing is saved. Try: <b>a new watch for my girlfriend, 450, in 2 weeks</b>. Or ask him how old he is.</p>
+<p>This is the real chat from the app, with a made-up household called Danae. Nothing is saved. Try: <b>a new watch for my girlfriend, 450, in 2 weeks</b>. Or ask him how old he is.</p>
 <div class="ef-screen" id="ef-screen" data-src="https://expenity.github.io/expenity/app/?demo=1&amp;ask=1&amp;lang=en"><button type="button" class="ef-coin" id="ef-coin">▶ Insert coin</button></div>
 <div class="row"><button type="button" class="alt" id="ef-restart">↻ Restart</button><a href="https://expenity.github.io/expenity/efriend/">Meet him properly</a><a href="https://expenity.github.io/expenity/el/efriend/">Στα ελληνικά</a></div>
 </div>
 <script>
 (function(){var s=document.getElementById('ef-screen'),c=document.getElementById('ef-coin'),r=document.getElementById('ef-restart');if(!s||!c)return;
-function load(){s.innerHTML='';var f=document.createElement('iframe');f.src=s.dataset.src;f.title='eFriend chat, live';f.setAttribute('allow','');s.appendChild(f);}
-c.addEventListener('click',load);r.addEventListener('click',load);})();
+var base=s.dataset.src;
+function mk(src){var f=document.createElement('iframe');f.src=src;f.title='eFriend chat, live';f.setAttribute('allow','');return f;}
+function preload(){if(s.querySelector('iframe'))return;var f=mk(base.replace('ask=1','ask=wait'));f.style.visibility='hidden';s.appendChild(f);}
+function play(){var f=s.querySelector('iframe');if(!f){preload();f=s.querySelector('iframe');}c.style.display='none';f.style.visibility='visible';try{f.contentWindow.postMessage('ef-open','*');}catch(e){}}
+function restart(){var f=s.querySelector('iframe');if(f)f.remove();c.style.display='none';s.appendChild(mk(base));}
+c.addEventListener('click',play);r.addEventListener('click',restart);preload();})();
 </script>
 
 Everybody is putting an AI chatbot in everything. I put a **bot** in my money app.
