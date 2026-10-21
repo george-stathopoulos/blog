@@ -90,3 +90,5 @@ Ask him something he does not know and you get the official answer: **"I ask the
 - 📱 [Open Expenity](https://expenity.github.io/expenity/app/)
 
 May the Force be with your budget.
+
+**Update:** he now has company. Meet [Boogie and Chip, the two eFriend personalities](https://george-stathopoulos.github.io/blog/posts/expenity-boogie-chip/).
