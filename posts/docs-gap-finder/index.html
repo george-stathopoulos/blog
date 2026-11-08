@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Docs Gap Finder: the question your docs have never heard | George Stathopoulos's blog</title>
+<meta name="description" content="A browser extension that reads the Zendesk ticket in front of you, checks it against your help articles, and points at what is missing. No AI, and the ticket never leaves your tab.">
+<link rel="canonical" href="https://george-stathopoulos.github.io/blog/posts/docs-gap-finder/">
+<meta name="theme-color" content="#0b0a08">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docs Gap Finder: the question your docs have never heard | George Stathopoulos's blog">
+<meta property="og:description" content="A browser extension that reads the Zendesk ticket in front of you, checks it against your help articles, and points at what is missing. No AI, and the ticket never leaves your tab.">
+<meta property="og:url" content="https://george-stathopoulos.github.io/blog/posts/docs-gap-finder/">
+<meta property="og:image" content="https://george-stathopoulos.github.io/blog/assets/social.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/rss+xml" title="George Stathopoulos's blog" href="https://george-stathopoulos.github.io/blog/feed.xml">
+<link rel="icon" href="/blog/assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/blog/assets/fonts/vt323-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/blog/assets/site.css?v=mw7quaix">
+<script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');try{var t=localStorage.getItem('gs-blog-theme'),f=localStorage.getItem('gs-blog-font');if(t)document.documentElement.dataset.theme=t;if(f)document.documentElement.dataset.font=f}catch(e){}</script>
+<!-- Cloudflare Web Analytics: counts visits anonymously, no cookies --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "64332b427a604e879f82853393ebdb0d"}'></script><!-- End Cloudflare Web Analytics -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Docs Gap Finder: the question your docs have never heard","datePublished":"2026-11-08","description":"A browser extension that reads the Zendesk ticket in front of you, checks it against your help articles, and points at what is missing. No AI, and the ticket never leaves your tab.","author":{"@type":"Person","name":"George Stathopoulos","url":"https://george-stathopoulos.github.io/"},"mainEntityOfPage":"https://george-stathopoulos.github.io/blog/posts/docs-gap-finder/"}</script>
+</head>
+<body class="is-post">
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"><i></i></div>
+<header class="bar">
+	<div class="wrap bar-in">
+		<a class="prompt" href="/blog/" aria-label="Blog home"><span class="u">george</span>@<span class="h">blog</span>:<span class="p">~</span>$</a>
+		<nav id="nav" class="nav" aria-label="Main"><a href="/blog/"><span class="cmd">home</span> ~/</a><a href="/blog/posts/" aria-current="page"><span class="cmd">ls</span> posts</a><a href="/blog/projects/"><span class="cmd">cd</span> projects</a><a href="/blog/about/"><span class="cmd">cat</span> about</a><a href="/blog/feed.xml"><span class="cmd">rss</span> feed</a></nav>
+		<div class="bar-tools">
+			<button type="button" class="tool" data-style-toggle aria-expanded="false" aria-controls="style-panel">[style]</button>
+			<button type="button" class="tool menu" data-menu aria-controls="nav" aria-expanded="false">[menu]</button>
+		</div>
+		<div class="style-panel" id="style-panel" hidden>
+			<p class="sp-h">colour</p>
+			<div class="sp-row"><button type="button" class="sp-btn" data-theme-set="amber" aria-pressed="false"><span class="sp-sw" style="--sw:#ffb000"></span>amber</button><button type="button" class="sp-btn" data-theme-set="green" aria-pressed="false"><span class="sp-sw" style="--sw:#33ff66"></span>green</button><button type="button" class="sp-btn" data-theme-set="white" aria-pressed="false"><span class="sp-sw" style="--sw:#f2f2f2"></span>white</button><button type="button" class="sp-btn" data-theme-set="paper" aria-pressed="false"><span class="sp-sw" style="--sw:#f4efe2"></span>paper</button></div>
+			<p class="sp-h">font</p>
+			<div class="sp-row"><button type="button" class="sp-btn" data-font-set="terminal" aria-pressed="false" style="font-family:'VT323', monospace">terminal</button><button type="button" class="sp-btn" data-font-set="plex" aria-pressed="false" style="font-family:'IBM Plex Mono', monospace">plex mono</button><button type="button" class="sp-btn" data-font-set="jetbrains" aria-pressed="false" style="font-family:'JetBrains Mono', monospace">jetbrains</button><button type="button" class="sp-btn" data-font-set="space" aria-pressed="false" style="font-family:'Space Mono', monospace">space mono</button><button type="button" class="sp-btn" data-font-set="system" aria-pressed="false" style="font-family:ui-monospace, Menlo, monospace">system</button></div>
+		</div>
+	</div>
+</header>
+<main id="main">
+<article class="post wrap" data-post-page>
+	<header class="post-head">
+		<p class="crumb" data-type><span class="dim">$</span> cat posts/docs-gap-finder.md</p>
+		<h1 class="post-title">Docs Gap Finder: the question your docs have never heard</h1>
+		<p class="post-meta"><time datetime="2026-11-08">8 Nov 2026</time> · 2 min read · <span class="tag">#extension</span> <span class="tag">#support</span> <span class="tag">#privacy</span> <span class="tag">#documentation</span></p>
+		<p class="post-lede">A browser extension that reads the Zendesk ticket in front of you, checks it against your help articles, and points at what is missing. No AI, and the ticket never leaves your tab.</p>
+	</header>
+	<div class="prose"><p>Every help center has the same quiet problem: nobody knows which question it has never answered.</p>
+<p>The tickets know. They arrive one at a time, each one a tiny report saying <em>&quot;I looked for this and didn't find it.&quot;</em> But they are read one at a time, answered one at a time, and then they scroll away.</p>
+<p>I wanted a tool that stands next to the ticket and asks one question: <strong>does the documentation cover this?</strong></p>
+<h2>What it does</h2>
+<ul>
+<li>📚 <strong>Index</strong> your public documentation. Enter the homepage and the app reads the articles.</li>
+<li>🔌 <strong>Connect</strong> the Chrome or Edge extension with a six-digit code.</li>
+<li>🎫 <strong>Scan</strong> a Zendesk ticket. The popup shows three groups:
+<ul>
+<li><strong>Relevant documentation</strong>: articles that overlap with the question</li>
+<li><strong>Potential gaps</strong>: needs with weak or no coverage</li>
+<li><strong>Suggested improvements</strong>: wording that could be added</li>
+</ul>
+</li>
+</ul>
+<p>The toolbar icon also turns green, yellow, red or gray, so you know before you open anything.</p>
+<h2>The rules I set myself</h2>
+<ul>
+<li>🚫 <strong>No AI.</strong> Matching is plain word comparison: word stems, ranking, and a vocabulary you control. The same ticket always gives the same answer, and you can see <em>why</em>.</li>
+<li>🔒 <strong>The ticket stays in your browser.</strong> It is read, matched and thrown away right there.</li>
+<li>🙋 <strong>Sending needs a click.</strong> When you mark a gap as <strong>Real gap</strong> or <strong>Not a gap</strong>, the card shows exactly which filtered key words will be sent. Nothing goes until you press.</li>
+<li>🤷 <strong>Never a verdict.</strong> Everything is a <em>potential</em> gap. A score shows shared words, not proof. Different wording for the same idea looks like a gap until you add it to the vocabulary.</li>
+</ul>
+<p>I did not want a tool that announces &quot;your docs are wrong&quot;. I wanted one that says &quot;have a look here&quot;.</p>
+<h2>What went wrong (a short list)</h2>
+<ul>
+<li>🪟 The first popup collapsed into a thin sliver in a real browser. It looked fine in the test setup. Fixed in 0.6.1.</li>
+<li>📜 Long tickets with many messages came back empty. Fixed in 0.6.2.</li>
+<li>🧱 The ticket page changed shape under me: the extraction was rewritten for the current agent workspace, and the tool now says plainly when part of a conversation is collapsed or not loaded.</li>
+<li>🧪 Tests passing on made-up tickets proved less than I hoped. Real tickets are messier.</li>
+</ul>
+<h2>What it does not do</h2>
+<ul>
+<li>👁️ It reads only what is loaded on screen.</li>
+<li>🎫 It supports Zendesk first. Other helpdesks are not supported yet.</li>
+<li>🧩 The extension is not in a store yet; you install it from the app.</li>
+</ul>
+<p>If your team answers the same question for the tenth time and the article still isn't written, <a href="https://george-stathopoulos.github.io/docs-gap-finder/" rel="noopener">this is for you</a>. The <a href="https://george-stathopoulos.github.io/docs-gap-finder/docs/" rel="noopener">guides</a> cover every step.</p>
+</div>
+	<script src="/blog/assets/share-heart.js?v=mw7quaix" data-mode="post" data-site="blog" data-post="docs-gap-finder" data-anim="wave" data-msg="Hello, you. Pass it on?" data-title="Pass it on." data-btn="Share this post" defer></script>
+	<p class="eof" aria-hidden="true">-- EOF --</p>
+	<aside class="project-box reveal"><p class="crumb"><span class="dim">$</span> cat project.info</p><h2>Docs Gap Finder</h2><p>Find the questions your documentation does not answer yet, ticket by ticket.</p><p class="kind">Browser extension and web app · free</p><p><a class="btn" href="https://george-stathopoulos.github.io/docs-gap-finder/">&gt; visit docs gap finder</a> <a class="btn ghost" href="https://github.com/george-stathopoulos/docs-gap-finder">&gt; source</a></p></aside>
+	<nav class="pager" aria-label="More posts">
+		<a href="/blog/posts/expenity-boogie-chip/"><small>&lt; older</small><span>Boogie and Chip: two friends for one money app (and they do not agree on anything)</span></a>
+		<a class="next" href="/blog/posts/hello-world/"><small>newer &gt;</small><span>Hello, world. Again.</span></a>
+	</nav>
+	<p class="back"><a href="/blog/posts/">&lt; cd ..</a></p>
+</article>
+</main>
+<footer class="foot">
+	<div class="wrap">
+		<p class="foot-line"><span class="dim">$</span> ls ~/projects</p>
+		<ul class="foot-projects"><li><a href="https://george-stathopoulos.github.io/gatehouse/">Gatehouse</a><span> AI governance and cost control for WordPress</span></li><li><a href="https://george-stathopoulos.github.io/helpdesk-hero/">Helpdesk Hero</a><span> WordPress support with diagnostics and password-free access</span></li><li><a href="https://george-stathopoulos.github.io/docs-gap-finder/">Docs Gap Finder</a><span> Find the questions your documentation does not answer yet, ticket by ticket</span></li><li><a href="https://george-stathopoulos.github.io/fixpass/">Fixpass</a><span> Spotlight the problem and give support safe, temporary access</span></li><li><a href="https://george-stathopoulos.github.io/fixpin/">FixPin</a><span> Point at what is broken on any website and share a private link</span></li><li><a href="https://george-stathopoulos.github.io/sheetpilot/">SheetPilot</a><span> Turn any spreadsheet into an interactive dashboard, in your browser</span></li><li><a href="https://expenity.github.io/expenity/">Expenity</a><span> Know where your money goes. English and Greek</span></li><li><a href="https://github.com/george-stathopoulos/mitos-checklist">Mitos Checklist</a><span> Greek public-service procedures as tick-off checklists</span></li></ul>
+		<p class="foot-meta"><a href="https://george-stathopoulos.github.io/">george-stathopoulos.github.io</a> · <a href="https://github.com/george-stathopoulos/blog">source</a> · no cookies; visits are counted anonymously, with no personal data · made with <span class="heart" aria-label="love">♥</span> in Athens</p>
+	</div>
+</footer>
+<script src="/blog/assets/site.js?v=mw7quaix" defer></script>
+<script src="/blog/assets/share-heart.js?v=mw7quaix" data-site="blog" data-url="https://george-stathopoulos.github.io/blog/" data-msg="Liked a post? Tell someone. It costs nothing but a tap." defer></script>
+</body>
+</html>
